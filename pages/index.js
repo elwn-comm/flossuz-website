@@ -13,9 +13,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <Image
-          src="/sample.png"
-          height={128}
-          width={128}
+          src="/logo.png"
+          height={150}
+          width={150}
           alt="Just a sample logo"
         />
 
