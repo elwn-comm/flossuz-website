@@ -15,7 +15,6 @@ export const Hero = () => {
   return (
     <Scrollytelling.Root
       defaults={{ ease: "linear" }}
-      debug={{ label: "Hero" }}
     >
       <Scrollytelling.Pin
         childHeight={"100vh"}

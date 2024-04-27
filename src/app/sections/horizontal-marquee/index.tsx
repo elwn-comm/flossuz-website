@@ -11,7 +11,6 @@ export const HorizontalMarquee = () => {
   return (
     <Scrollytelling.Root
       start="top top+=300px"
-      debug={{ label: "Horizontal Marquee" }}
     >
       <section className={s.section}>
         <div className={s.pinned}>

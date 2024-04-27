@@ -9,7 +9,6 @@ export const LabIntro = () => {
       start="top bottom"
       end="bottom top"
       scrub={1.1}
-      debug={{ label: "Lab Intro" }}
     >
       <div className={s.container}>
         <Scrollytelling.Parallax

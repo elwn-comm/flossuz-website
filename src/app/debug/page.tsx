@@ -34,7 +34,6 @@ export default function Page() {
           <Scrollytelling.Root
             disabled={isDisabled}
             key={i}
-            debug={{ label: "texts" }}
           >
             <div style={{ height: "200vh", background: "black" }}>
               <div style={{ position: "sticky", top: 0 }}>
