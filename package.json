@@ -1,52 +1,16 @@
 {
   "name": "website",
-  "private": true,
-  "version": "0.1.6",
+  "version": "1.0.0",
+  "description": "Rewritten version of website",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "build:analyze": "cross-env ANALYZE=true yarn build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "pnpm run css --watch && trunk serve",
+    "css": "tailwindcss -i ./style/input.css -o ./style/output.css",
+    "rnstl": "./vercel/install.sh",
+    "build": "pnpm run css && ./vercel/build.sh"
   },
-  "dependencies": {
-    "@bsmnt/scrollytelling": "^0.3.0",
-    "@react-three/drei": "^9.65.3",
-    "@react-three/fiber": "^8.12.0",
-    "@types/three": "^0.150.1",
-    "@vercel/analytics": "^1.0.0",
-    "canvas-confetti": "^1.6.0",
-    "clsx": "^1.2.1",
-    "eslint-config-custom": "^0.0.0",
-    "gsap": "^3.11.5",
-    "leva": "^0.9.34",
-    "next": "^13.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-merge-refs": "^2.1.1",
-    "react-use-measure": "^2.1.1",
-    "sharp": "^0.32.0",
-    "three": "^0.151.3",
-    "three-stdlib": "^2.29.7",
-    "zustand": "^4.3.7"
-  },
+  "author": "Sokhibjon Orzikulov <sakhib@orzklv.uz>",
+  "license": "CC0-1.0",
   "devDependencies": {
-    "@next/bundle-analyzer": "13.3.0",
-    "@types/canvas-confetti": "^1.6.0",
-    "@types/node": "20.12.7",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.1.1",
-    "eslint-config-next": "^14.2.3",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-react": "^7.34.1",
-    "sass": "1.62.0",
-    "tsconfig": "*",
-    "typescript": "5.0.4"
+    "tailwindcss": "^3.3.5"
   }
 }

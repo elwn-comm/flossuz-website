@@ -1,36 +1,18 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Output website
+/dist/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Rust build directory
+/target
 
-# testing
-/coverage
+# Tailwindcss output
+/style/output.css
 
-# next.js
-/.next/
-/out/
+# Nodejs
+node_modules
+pnpm-lock.yaml
 
-# production
-/build
+# Nix
+/result
 
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Template
+studio-ts/
