@@ -6,7 +6,7 @@
 
   toolchain = fenix.packages.${pkgs.system}.fromToolchainFile {
     file = ./rust-toolchain.toml;
-    sha256 = "sha256-s1RPtyvDGJaX/BisLT+ifVfuhDT1nZkZ1NcK8sbwELM=";
+    sha256 = "sha256-vMlz0zHduoXtrlu0Kj1jEp71tYFXyymACW8L4jzrzNA";
   };
 in
   pkgs.stdenv.mkDerivation {
