@@ -8,75 +8,71 @@
   in
     import nixpkgs {overlays = [];},
   ...
-}:
-pkgs.stdenv.mkDerivation {
-  name = "floss-website";
+}: let
+  manifest = pkgs.lib.importJSON ./package.json;
 
-  nativeBuildInputs = with pkgs; [
-    # Typescript
-    nodejs
-    pnpm
-    corepack
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+  exec = pkgs.writeShellScript "${manifest.name}-start.sh" ''
+    # Change working directory to script
+    cd "$(dirname "$0")/../lib"
 
-    # Hail the Nix
-    nixd
-    statix
-    alejandra
-
-    # Tailwind
-    tailwindcss
-  ];
-
-  buildInputs = with pkgs; [
-    openssl
-    vips
-  ];
-
-  buildPhase = ''
-    # Build the css
-    tailwindcss -i ./style/input.css -o ./style/output.css
-
-    # Wasm-bindgen nigga can't build without storing cache at HOME
-    export HOME="$(pwd)/home"
-    mkdir -p $HOME
-
-    # Test wasm
-    wasm-bindgen -V
-
-    # Build wasm webiste
-    trunk build --release --public-url=/
+    ${pkgs.lib.getExe pkgs.nodejs} ./server.js
   '';
+in
+  # pkgs.stdenv.mkDerivation {
+  pkgs.buildNpmPackage {
+    pname = manifest.name;
+    version = manifest.version;
 
-  installPhase = ''
-    # Create out directory
-    mkdir -p $out/www
+    src = ./.;
+    npmDepsHash = "sha256-XvntVYEc0qrc9v1xZ7HC2DjYw5uXnxuQA6UNUNDLv3w=";
 
-    # Move all finished content
-    mv ./dist/* $out/www
-  '';
+    installPhase = ''
+      # Create output directory
+      mkdir -p $out
 
-  meta = with pkgs.lib; {
-    homepage = "https://floss.uz";
-    description = "Website of Floss Uzbekistan community";
-    license = with lib.licenses; [gpl3Only];
+      # Copy standalone as library
+      cp -R ./.next/standalone $out/lib
 
-    platforms = with platforms; linux ++ darwin;
+      # Copy static contents
+      if [ -d "./.next/static" ]; then
+        cp -R ./.next/static $out/lib/.next/static
+      fi
 
-    maintainers = [
-      {
-        name = "Sokhibjon Orzikulov";
-        email = "sakhib@orzklv.uz";
-        handle = "orzklv";
-        github = "orzklv";
-        githubId = 54666588;
-        keys = [
-          {
-            fingerprint = "00D2 7BC6 8707 0683 FBB9  137C 3C35 D3AF 0DA1 D6A8";
-          }
-        ];
-      }
+      # Copy public assets
+      if [ -d "./public" ]; then
+        cp -R ./public $out/lib/public
+      fi
+
+      # Create executable directory
+      mkdir -p $out/bin
+
+      # Copy shell script to executables
+      cp -r ${exec} $out/bin/${manifest.name}-start
+    '';
+
+    nativeBuildInputs = with pkgs; [
+      # Typescript
+      nodejs
+      pnpm
+      corepack
+
+      # Hail the Nix
+      nixd
+      statix
+      alejandra
     ];
-  };
-}
+
+    buildInputs = with pkgs; [
+      openssl
+      vips
+    ];
+
+    meta = with pkgs.lib; {
+      homepage = "https://floss.uz";
+      mainProgram = "${manifest.name}-start";
+      description = "Website of Floss Uzbekistan community";
+      license = with licenses; [cc0];
+      platforms = with platforms; linux ++ darwin;
+      maintainers = with maintainers; [ orzklv ];
+    };
+  }

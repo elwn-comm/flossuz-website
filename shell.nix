@@ -8,30 +8,32 @@
   in
     import nixpkgs {overlays = [];},
   ...
-}:
-pkgs.stdenv.mkDerivation {
-  name = "floss-website";
+}: let
+  manifest = pkgs.lib.importJSON ./package.json;
+in
+  pkgs.stdenv.mkDerivation {
+    name = manifest.name;
 
-  nativeBuildInputs = with pkgs; [
-    # Typescript
-    nodejs
-    pnpm
-    corepack
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+    nativeBuildInputs = with pkgs; [
+      # Typescript
+      nodejs
+      pnpm
+      corepack
+      nodePackages.typescript
+      nodePackages.typescript-language-server
 
-    # Hail the Nix
-    nixd
-    statix
-    deadnix
-    alejandra
+      # Hail the Nix
+      nixd
+      statix
+      deadnix
+      alejandra
 
-    # Tailwind
-    tailwindcss
-  ];
+      # Tailwind
+      tailwindcss
+    ];
 
-  buildInputs = with pkgs; [
-    openssl
-    vips
-  ];
-}
+    buildInputs = with pkgs; [
+      openssl
+      vips
+    ];
+  }
