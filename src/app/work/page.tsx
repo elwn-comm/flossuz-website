@@ -1,30 +1,30 @@
-import { type Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { type Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Blockquote } from "@/components/Blockquote";
-import { Border } from "@/components/Border";
-import { Button } from "@/components/Button";
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn, FadeInStagger } from "@/components/FadeIn";
-import { PageIntro } from "@/components/PageIntro";
-import { Testimonial } from "@/components/Testimonial";
-import logoBrightPath from "@/images/clients/bright-path/logo-dark.svg";
-import logoFamilyFund from "@/images/clients/family-fund/logo-dark.svg";
-import logoGreenLife from "@/images/clients/green-life/logo-dark.svg";
-import logoHomeWork from "@/images/clients/home-work/logo-dark.svg";
-import logoMailSmirk from "@/images/clients/mail-smirk/logo-dark.svg";
-import logoNorthAdventures from "@/images/clients/north-adventures/logo-dark.svg";
-import logoPhobia from "@/images/clients/phobia/logo-dark.svg";
-import logoUnseal from "@/images/clients/unseal/logo-dark.svg";
-import { formatDate } from "@/lib/formatDate";
-import { type CaseStudy, loadCaseStudies, type MDXEntry } from "@/lib/mdx";
+import { Blockquote } from '@/components/Blockquote'
+import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { PageIntro } from '@/components/PageIntro'
+import { Testimonial } from '@/components/Testimonial'
+import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
+import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
+import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
+import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
+import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
+import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
+import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
+import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
+import { formatDate } from '@/lib/formatDate'
+import { type CaseStudy, loadCaseStudies, type MDXEntry } from '@/lib/mdx'
 
 function CaseStudies({
   caseStudies,
 }: {
-  caseStudies: Array<MDXEntry<CaseStudy>>;
+  caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
     <Container className="mt-40">
@@ -93,14 +93,14 @@ function CaseStudies({
         ))}
       </div>
     </Container>
-  );
+  )
 }
 
 const clients = [
-  ["DevOps Journey", logoPhobia],
-  ["Rust Uzbekistan", logoFamilyFund],
-  ["Xinux", logoUnseal],
-];
+  ['DevOps Journey', logoPhobia],
+  ['Rust Uzbekistan', logoFamilyFund],
+  ['Xinux', logoUnseal],
+]
 
 function Clients() {
   return (
@@ -128,17 +128,17 @@ function Clients() {
         </ul>
       </FadeInStagger>
     </Container>
-  );
+  )
 }
 
 export const metadata: Metadata = {
-  title: "Our Work",
+  title: 'Our Work',
   description:
-    "We believe in efficiency and maximizing our resources to provide the best value to our clients.",
-};
+    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+}
 
 export default async function Work() {
-  let caseStudies = await loadCaseStudies();
+  let caseStudies = await loadCaseStudies()
 
   return (
     <>
@@ -157,16 +157,15 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Mail Smirk", logo: logoMailSmirk }}
+        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
-        We approached <em>Studio</em>{" "}
-        because we loved their past work. They delivered something remarkably
-        similar in record time.
+        We approached <em>Studio</em> because we loved their past work. They
+        delivered something remarkably similar in record time.
       </Testimonial>
 
       <Clients />
 
       <ContactSection />
     </>
-  );
+  )
 }

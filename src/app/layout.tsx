@@ -1,8 +1,8 @@
-import { type Metadata } from "next";
+import { type Metadata } from 'next'
 
-import { RootLayout } from "@/components/RootLayout";
+import { RootLayout } from '@/components/RootLayout'
 
-import "@/styles/tailwind.css";
+import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default:
       "Floss O'zbekiston - O'zbekistondagi yagona IT hamjamiyat aggregatori.",
   },
-};
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,5 +19,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <RootLayout>{children}</RootLayout>
       </body>
     </html>
-  );
+  )
 }

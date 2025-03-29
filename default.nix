@@ -24,7 +24,7 @@ in
     version = manifest.version;
 
     src = ./.;
-    npmDepsHash = "sha256-XvntVYEc0qrc9v1xZ7HC2DjYw5uXnxuQA6UNUNDLv3w=";
+    npmDepsHash = "sha256-QZ2orsvo9mx6wNsdvwc67u3vXr6/nhH7vFoE+ViarKE=";
 
     installPhase = ''
       # Create output directory
@@ -73,6 +73,6 @@ in
       description = "Website of Floss Uzbekistan community";
       license = with licenses; [cc-by-40];
       platforms = with platforms; linux ++ darwin;
-      maintainers = with maintainers; [ orzklv ];
+      maintainers = with maintainers; [orzklv];
     };
   }

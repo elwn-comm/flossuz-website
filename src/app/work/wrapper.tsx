@@ -1,23 +1,23 @@
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { GrayscaleTransitionImage } from "@/components/GrayscaleTransitionImage";
-import { MDXComponents } from "@/components/MDXComponents";
-import { PageIntro } from "@/components/PageIntro";
-import { PageLinks } from "@/components/PageLinks";
-import { type CaseStudy, loadCaseStudies, type MDXEntry } from "@/lib/mdx";
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
+import { MDXComponents } from '@/components/MDXComponents'
+import { PageIntro } from '@/components/PageIntro'
+import { PageLinks } from '@/components/PageLinks'
+import { type CaseStudy, loadCaseStudies, type MDXEntry } from '@/lib/mdx'
 
 export default async function CaseStudyLayout({
   caseStudy,
   children,
 }: {
-  caseStudy: MDXEntry<CaseStudy>;
-  children: React.ReactNode;
+  caseStudy: MDXEntry<CaseStudy>
+  children: React.ReactNode
 }) {
-  let allCaseStudies = await loadCaseStudies();
+  let allCaseStudies = await loadCaseStudies()
   let moreCaseStudies = allCaseStudies
     .filter(({ metadata }) => metadata !== caseStudy)
-    .slice(0, 2);
+    .slice(0, 2)
 
   return (
     <>
@@ -39,8 +39,8 @@ export default async function CaseStudyLayout({
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
                       <dt className="font-semibold">Yil</dt>
                       <dd>
-                        <time dateTime={caseStudy.date.split("-")[0]}>
-                          {caseStudy.date.split("-")[0]}
+                        <time dateTime={caseStudy.date.split('-')[0]}>
+                          {caseStudy.date.split('-')[0]}
                         </time>
                       </dd>
                     </div>
@@ -84,5 +84,5 @@ export default async function CaseStudyLayout({
 
       <ContactSection />
     </>
-  );
+  )
 }

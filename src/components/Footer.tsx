@@ -1,41 +1,41 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { Logo } from "@/components/Logo";
-import { socialMediaProfiles } from "@/components/SocialMedia";
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { Logo } from '@/components/Logo'
+import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: "Hamjamiyatlarimiz",
+    title: 'Hamjamiyatlarimiz',
     links: [
-      { title: "DevOps Journey", href: "/work/devops-journey" },
-      { title: "Rust O'zbekiston", href: "/work/rust-uzbekistan" },
-      { title: "Xinux", href: "/work/xinux" },
+      { title: 'DevOps Journey', href: '/work/devops-journey' },
+      { title: "Rust O'zbekiston", href: '/work/rust-uzbekistan' },
+      { title: 'Xinux', href: '/work/xinux' },
       {
         title: (
           <>
             Hammasini ko'rish <span aria-hidden="true">&rarr;</span>
           </>
         ),
-        href: "/work",
+        href: '/work',
       },
     ],
   },
   {
-    title: "Tashkilot",
+    title: 'Tashkilot',
     links: [
-      { title: "Biz haqimizda", href: "/about" },
-      { title: "Ishimiz", href: "/process" },
-      { title: "Blog", href: "/blog" },
-      { title: "Biz bilan bogʻlaning", href: "/contact" },
+      { title: 'Biz haqimizda', href: '/about' },
+      { title: 'Ishimiz', href: '/process' },
+      { title: 'Blog', href: '/blog' },
+      { title: 'Biz bilan bogʻlaning', href: '/contact' },
     ],
   },
   {
     title: "Bog'laning",
     links: socialMediaProfiles,
   },
-];
+]
 
 function Navigation() {
   return (
@@ -62,10 +62,10 @@ function Navigation() {
         ))}
       </ul>
     </nav>
-  );
+  )
 }
 
-function ArrowIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
       <path
@@ -75,7 +75,7 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<"svg">) {
         d="M16 3 10 .5v2H0v1h10v2L16 3Z"
       />
     </svg>
-  );
+  )
 }
 
 function NewsletterForm() {
@@ -106,7 +106,7 @@ function NewsletterForm() {
         </div>
       </div>
     </form>
-  );
+  )
 }
 
 export function Footer() {
@@ -129,5 +129,5 @@ export function Footer() {
         </div>
       </FadeIn>
     </Container>
-  );
+  )
 }
