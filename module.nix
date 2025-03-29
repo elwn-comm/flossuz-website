@@ -6,27 +6,16 @@ flake: {
   pkgs,
   ...
 }: let
-  cfg = config.services.rustina;
-  bot = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  # Shortcut config
+  cfg = config.services.floss-website;
 
-  genArgs = {cfg}: let
-    telegram = cfg.tokens.telegram;
-    github = cfg.tokens.github;
-    domain = cfg.webhook.domain or "";
-    mode =
-      if cfg.webhook.enable
-      then "webhook"
-      else "polling";
-    port =
-      if cfg.webhook.enable
-      then "--port ${toString cfg.webhook.port}"
-      else "";
-  in
-    lib.strings.concatStringsSep " " [mode telegram github domain port];
+  # Packaged server
+  server = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
+  # Caddy module lugin
   caddy = lib.mkIf (cfg.enable && cfg.webhook.enable && cfg.webhook.proxy == "caddy") {
-    services.caddy.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.webhook.domain) "webhook.domain can't be null, please specicy it properly!" {
-      "${cfg.webhook.domain}" = {
+    services.caddy.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
+      "${cfg.proxy.domain}" = {
         extraConfig = ''
           reverse_proxy 127.0.0.1:${toString cfg.webhook.port}
         '';
@@ -34,9 +23,10 @@ flake: {
     };
   };
 
+  # Nginx module plugin
   nginx = lib.mkIf (cfg.enable && cfg.webhook.enable && cfg.webhook.proxy == "nginx") {
-    services.nginx.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.webhook.domain) "webhook.domain can't be null, please specicy it properly!" {
-      "${cfg.webhook.domain}" = {
+    services.nginx.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
+      "${cfg.proxy.domain}" = {
         addSSL = true;
         enableACME = true;
         locations."/" = {
@@ -47,18 +37,25 @@ flake: {
     };
   };
 
+  # The systemd service
   service = lib.mkIf cfg.enable {
     users.users.${cfg.user} = {
-      description = "Rustina Bot management user";
+      description = "Floss Website user";
       isSystemUser = true;
       group = cfg.group;
     };
 
     users.groups.${cfg.group} = {};
 
-    systemd.services.rustina-bot = {
-      description = "Rustina Bot for managing telegram community";
-      documentation = ["https://rust-lang.uz/"];
+    systemd.services.floss-website = {
+      description = "Official website of Floss Uzbekistan";
+      documentation = ["https://github.com/floss-uz"];
+
+      environment = {
+        PORT = "${toString cfg.port}";
+        HOSTNAME = cfg.host;
+        NODE_ENV = "production";
+      };
 
       after = ["network-online.target"];
       wants = ["network-online.target"];
@@ -68,10 +65,9 @@ flake: {
         User = cfg.user;
         Group = cfg.group;
         Restart = "always";
-        ExecStart = "${lib.getBin cfg.package}/bin/bot ${genArgs {cfg = cfg;}}";
+        ExecStart = "${lib.getExe cfg.package}";
         StateDirectory = cfg.user;
         StateDirectoryMode = "0750";
-        # EnvironmentFile = cfg.secret;
         CapabilityBoundingSet = [
           "AF_NETLINK"
           "AF_INET"
@@ -81,7 +77,6 @@ flake: {
         DevicePolicy = "strict";
         IPAddressAllow = "localhost";
         LockPersonality = true;
-        # MemoryDenyWriteExecute = true;
         NoNewPrivileges = true;
         PrivateDevices = true;
         PrivateTmp = true;
@@ -113,47 +108,30 @@ flake: {
         ];
         UMask = "0027";
       };
-
-      # preStart = ''
-      #   installedConfigFile="${config.services.rustina.dataDir}/Config/options.json"
-      #   install -d -m750 ${config.services.rustina.dataDir}/Config
-      #   rm -f "$installedConfigFile" && install -m640 ${configFile} "$installedConfigFile"
-      # '';
     };
   };
 
   asserts = lib.mkIf cfg.enable {
     warnings = [
-      (lib.mkIf (cfg.webhook.enable && cfg.webhook.domain == null) "services.rustina.webhook.domain must be set in order to properly generate certificate!")
-    ];
-
-    assertions = [
-      {
-        assertion = cfg.tokens.telegram != null;
-        message = "services.rustina.tokens.telegram must be set!";
-      }
-      {
-        assertion = cfg.tokens.github != null;
-        message = "services.rustina.tokens.github must be set!";
-      }
+      (lib.mkIf (cfg.proxy.enable && cfg.proxy.domain == null) "services.floss-website.proxy.domain must be set in order to properly generate certificate!")
     ];
   };
 in {
   options = with lib; {
-    services.rustina = {
+    services.floss-website = {
       enable = mkEnableOption ''
-        Rustina Bot: Telegram bot made by Uzbek Rust team for Rust Uzbekistan community.
+        Floss Uzbekistan website.
       '';
 
-      webhook = {
+      proxy = {
         enable = mkEnableOption ''
-          Webhook method of deployment
+          Proxy reversed method of deployment
         '';
 
         domain = mkOption {
           type = with types; nullOr str;
           default = null;
-          example = "rust-lang.uz";
+          example = "floss.uz";
           description = "Domain to use while adding configurations to web proxy server";
         };
 
@@ -164,59 +142,47 @@ in {
               "caddy"
             ]);
           default = "caddy";
-          description = "Proxy reverse software for hosting webhook";
-        };
-
-        port = mkOption {
-          type = types.int;
-          default = 8451;
-          description = "Port to use for passing over proxy";
+          description = "Proxy reverse software for hosting website";
         };
       };
 
-      tokens = {
-        telegram = mkOption {
-          type = with types; nullOr path;
-          default = null;
-          description = lib.mdDoc ''
-            Path to telegram bot token of Rustina manager.
-          '';
-        };
+      host = mkOption {
+        type = types.str;
+        default = "127.0.0.1";
+        description = "Hostname for nextjs server to bind";
+      };
 
-        github = mkOption {
-          type = with types; nullOr path;
-          default = null;
-          description = lib.mdDoc ''
-            Path to github token for Rustina manager.
-          '';
-        };
+      port = mkOption {
+        type = types.int;
+        default = 8455;
+        description = "Port to use for passing over proxy";
       };
 
       user = mkOption {
         type = types.str;
-        default = "rustina-bot";
+        default = "floss-www";
         description = "User for running system + accessing keys";
       };
 
       group = mkOption {
         type = types.str;
-        default = "rustina-bot";
+        default = "floss-www";
         description = "Group for running system + accessing keys";
       };
 
       dataDir = mkOption {
         type = types.str;
-        default = "/var/lib/rustina/bot";
+        default = "/var/lib/floss/www";
         description = lib.mdDoc ''
-          The path where Rustina Bot keeps its config, data, and logs.
+          The path where Floss Website server keeps data and possibly logs.
         '';
       };
 
       package = mkOption {
         type = types.package;
-        default = bot;
+        default = server;
         description = ''
-          The Rustian Bot package to use with the service.
+          Packaged floss.uz website contents for service.
         '';
       };
     };
