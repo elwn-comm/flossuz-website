@@ -7,15 +7,15 @@ import { socialMediaProfiles } from "@/components/SocialMedia";
 
 const navigation = [
   {
-    title: "Work",
+    title: "Hamjamiyatlarimiz",
     links: [
-      { title: "FamilyFund", href: "/work/family-fund" },
-      { title: "Unseal", href: "/work/unseal" },
-      { title: "Phobia", href: "/work/phobia" },
+      { title: "DevOps Journey", href: "/work/devops-journey" },
+      { title: "Rust O'zbekiston", href: "/work/rust-uzbekistan" },
+      { title: "Xinux", href: "/work/xinux" },
       {
         title: (
           <>
-            See all <span aria-hidden="true">&rarr;</span>
+            Hammasini ko'rish <span aria-hidden="true">&rarr;</span>
           </>
         ),
         href: "/work",
@@ -23,16 +23,16 @@ const navigation = [
     ],
   },
   {
-    title: "Company",
+    title: "Tashkilot",
     links: [
-      { title: "About", href: "/about" },
-      { title: "Process", href: "/process" },
+      { title: "Biz haqimizda", href: "/about" },
+      { title: "Ishimiz", href: "/process" },
       { title: "Blog", href: "/blog" },
-      { title: "Contact us", href: "/contact" },
+      { title: "Biz bilan bogʻlaning", href: "/contact" },
     ],
   },
   {
-    title: "Connect",
+    title: "Bog'laning",
     links: socialMediaProfiles,
   },
 ];
@@ -82,16 +82,15 @@ function NewsletterForm() {
   return (
     <form className="max-w-sm">
       <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-        Sign up for our newsletter
+        Yangiliklarga obuna bo‘ling
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+        Eng so‘nggi maqolalar, resurslar va ilhom uchun obuna bo‘ling.
       </p>
       <div className="relative mt-6">
         <input
           type="email"
-          placeholder="Email address"
+          placeholder="Elektron pochta manzili"
           autoComplete="email"
           aria-label="Email address"
           className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"

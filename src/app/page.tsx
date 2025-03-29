@@ -22,14 +22,9 @@ import imageLaptop from "@/images/laptop.jpg";
 import { type CaseStudy, loadCaseStudies, type MDXEntry } from "@/lib/mdx";
 
 const clients = [
-  ["Phobia", logoPhobiaLight],
-  ["Family Fund", logoFamilyFund],
-  ["Unseal", logoUnseal],
-  ["Mail Smirk", logoMailSmirk],
-  ["Home Work", logoHomeWork],
-  ["Green Life", logoGreenLife],
-  ["Bright Path", logoBrightPath],
-  ["North Adventures", logoNorthAdventures],
+  ["Xinux", logoPhobiaLight],
+  ["Rust Uzbekistan", logoFamilyFund],
+  ["Devops Journey", logoUnseal],
 ];
 
 function Clients() {
@@ -104,7 +99,7 @@ function CaseStudies({
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>Izlanish</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}

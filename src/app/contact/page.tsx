@@ -1,20 +1,20 @@
-import { useId } from 'react'
-import { type Metadata } from 'next'
-import Link from 'next/link'
+import { useId } from "react";
+import { type Metadata } from "next";
+import Link from "next/link";
 
-import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { Offices } from '@/components/Offices'
-import { PageIntro } from '@/components/PageIntro'
-import { SocialMedia } from '@/components/SocialMedia'
+import { Border } from "@/components/Border";
+import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { FadeIn } from "@/components/FadeIn";
+import { Offices } from "@/components/Offices";
+import { PageIntro } from "@/components/PageIntro";
+import { SocialMedia } from "@/components/SocialMedia";
 
 function TextInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  let id = useId()
+}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
+  let id = useId();
 
   return (
     <div className="group relative z-0 transition-all focus-within:z-10">
@@ -32,13 +32,13 @@ function TextInput({
         {label}
       </label>
     </div>
-  )
+  );
 }
 
 function RadioInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
+}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
   return (
     <label className="flex gap-x-3">
       <input
@@ -48,7 +48,7 @@ function RadioInput({
       />
       <span className="text-base/6 text-neutral-950">{label}</span>
     </label>
-  )
+  );
 }
 
 function ContactForm() {
@@ -56,64 +56,75 @@ function ContactForm() {
     <FadeIn className="lg:order-last">
       <form>
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Work inquiries
+          Ish bo‘yicha so‘rovlar
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
+          <TextInput label="Ism" name="name" autoComplete="name" />
           <TextInput
-            label="Email"
+            label="Elektron pochta"
             type="email"
             name="email"
             autoComplete="email"
           />
           <TextInput
-            label="Company"
+            label="Hamjamiyat"
             name="company"
             autoComplete="organization"
           />
-          <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Message" name="message" />
+          <TextInput
+            label="Telefon raqam"
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+          />
+          <TextInput label="Xabar" name="message" />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
+              <legend className="text-base/6 text-neutral-500">
+                Auditoriya
+              </legend>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="$25K – $50K" name="budget" value="25" />
-                <RadioInput label="$50K – $100K" name="budget" value="50" />
-                <RadioInput label="$100K – $150K" name="budget" value="100" />
-                <RadioInput label="More than $150K" name="budget" value="150" />
+                <RadioInput label="0 – 100" name="budget" value="100" />
+                <RadioInput label="100 – 500" name="budget" value="500" />
+                <RadioInput label="500 – 1000" name="budget" value="1000" />
+                <RadioInput
+                  label="1000 dan ko'p"
+                  name="budget"
+                  value="1000+"
+                />
               </div>
             </fieldset>
           </div>
         </div>
         <Button type="submit" className="mt-10">
-          Let’s work together
+          Keling, birga ishlaymiz
         </Button>
       </form>
     </FadeIn>
-  )
+  );
 }
 
 function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our offices
+        Bizning ofislarimiz
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        Prefer doing things in person? We don’t but we have to list our
-        addresses here for legal reasons.
+        Yuz-ma yuz ishlashni afzal ko'rasizmi? Unda bizni ushbu keltirilgan
+        manzil bo'yicha topishingiz mumkin!
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Email us
+          Bizga elektron pochta yollang
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
-            ['Careers', 'careers@studioagency.com'],
-            ['Press', 'press@studioagency.com'],
+            ["Rais", "maintainers@floss.uz"],
+            ["Qo‘llab-quvvatlash", "support@floss.uz"],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -132,24 +143,27 @@ function ContactDetails() {
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
+          Bizni kuzatib boring
         </h2>
         <SocialMedia className="mt-6" />
       </Border>
     </FadeIn>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
-}
+  title: "Biz bilan bog‘laning",
+  description: "Keling, birga ishlaylik. Sizdan xabar kutib qolamiz.",
+};
 
 export default function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
-        <p>We can’t wait to hear from you.</p>
+      <PageIntro
+        eyebrow="Biz bilan bog‘laning"
+        title="Keling, birga ishlaylik"
+      >
+        <p>Sizdan xabar kutib qolamiz.</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
@@ -159,5 +173,5 @@ export default function Contact() {
         </div>
       </Container>
     </>
-  )
+  );
 }

@@ -75,7 +75,7 @@ function CaseStudies({
                       href={caseStudy.href}
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      Izlanish haqida ko'proq
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -107,7 +107,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
+          Siz ishonchli qo'llar ostidasiz
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
