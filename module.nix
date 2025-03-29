@@ -13,24 +13,24 @@ flake: {
   server = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   # Caddy module lugin
-  caddy = lib.mkIf (cfg.enable && cfg.webhook.enable && cfg.webhook.proxy == "caddy") {
+  caddy = lib.mkIf (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "caddy") {
     services.caddy.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
       "${cfg.proxy.domain}" = {
         extraConfig = ''
-          reverse_proxy 127.0.0.1:${toString cfg.webhook.port}
+          reverse_proxy 127.0.0.1:${toString cfg.port}
         '';
       };
     };
   };
 
   # Nginx module plugin
-  nginx = lib.mkIf (cfg.enable && cfg.webhook.enable && cfg.webhook.proxy == "nginx") {
+  nginx = lib.mkIf (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "nginx") {
     services.nginx.virtualHosts = lib.debug.traceIf (builtins.isNull cfg.proxy.domain) "proxy.domain can't be null, please specicy it properly!" {
       "${cfg.proxy.domain}" = {
         addSSL = true;
         enableACME = true;
         locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString cfg.webhook.port}";
+          proxyPass = "http://127.0.0.1:${toString cfg.port}";
           proxyWebsockets = true;
         };
       };
