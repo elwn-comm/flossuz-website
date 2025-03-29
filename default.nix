@@ -71,7 +71,7 @@ in
       homepage = "https://floss.uz";
       mainProgram = "${manifest.name}-start";
       description = "Website of Floss Uzbekistan community";
-      license = with licenses; [cc0];
+      license = with licenses; [cc-by-40];
       platforms = with platforms; linux ++ darwin;
       maintainers = with maintainers; [ orzklv ];
     };
