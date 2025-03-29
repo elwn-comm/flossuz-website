@@ -110,7 +110,7 @@ const team = [
       },
       {
         name: 'Manuchehr Usmonov',
-        role: 'VP, Human Resources',
+        role: 'Yordamchi Tashkilot',
         link: 'https://manu.uz',
         image: { src: imageKathrynMurphy },
       },
