@@ -1,26 +1,19 @@
 {
-  description = "Website for Rust Uzbekistan community";
+  description = "Website for Floss Uzbekistan community";
 
   inputs = {
     # Too old to work with most libraries
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Perfect!
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     # The flake-utils library
     flake-utils.url = "github:numtide/flake-utils";
-
-    # Additional helper Rust toolchain management
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
     nixpkgs,
-    fenix,
     flake-utils,
     ...
   }:
@@ -33,10 +26,10 @@
         formatter = pkgs.alejandra;
 
         # Development environment
-        devShells.default = import ./shell.nix {inherit pkgs fenix;};
+        devShells.default = import ./shell.nix {inherit pkgs;};
 
         # Output package
-        packages.default = pkgs.callPackage ./. {inherit pkgs fenix;};
+        packages.default = pkgs.callPackage ./. {inherit pkgs;};
       }
     );
 }

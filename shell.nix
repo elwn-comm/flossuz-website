@@ -1,61 +1,37 @@
 {
-  pkgs ? import <nixpkgs> {},
-  fenix,
-}: let
-  getLibFolder = pkg: "${pkg}/lib";
+  pkgs ? let
+    lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
+    nixpkgs = fetchTarball {
+      url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
+      sha256 = lock.narHash;
+    };
+  in
+    import nixpkgs {overlays = [];},
+  ...
+}:
+pkgs.stdenv.mkDerivation {
+  name = "floss-website";
 
-  toolchain = fenix.packages.${pkgs.system}.fromToolchainFile {
-    file = ./rust-toolchain.toml;
-    sha256 = "sha256-vMlz0zHduoXtrlu0Kj1jEp71tYFXyymACW8L4jzrzNA";
-  };
-in
-  pkgs.stdenv.mkDerivation {
-    name = "rust-website";
+  nativeBuildInputs = with pkgs; [
+    # Typescript
+    nodejs
+    pnpm
+    corepack
+    nodePackages.typescript
+    nodePackages.typescript-language-server
 
-    nativeBuildInputs = with pkgs; [
-      # LLVM & GCC
-      gcc
-      cmake
-      gnumake
-      pkg-config
-      llvmPackages.llvm
-      llvmPackages.clang
-      llvmPackages.bintools
+    # Hail the Nix
+    nixd
+    statix
+    deadnix
+    alejandra
 
-      # Hail the Nix
-      nixd
-      statix
-      alejandra
+    # Tailwind
+    tailwindcss
+  ];
 
-      # Launch scripts
-      just
-
-      # Tailwind
-      tailwindcss
-
-      # Rust
-      rustc
-      cargo
-      clippy
-      trunk
-      toolchain
-      wasm-pack
-      cargo-watch
-      rust-analyzer
-      wasm-bindgen-cli
-    ];
-
-    buildInputs = with pkgs; [
-      openssl
-    ];
-
-    # Set Environment Variables
-    RUST_BACKTRACE = 1;
-    NIX_LDFLAGS = "-L${(getLibFolder pkgs.libiconv)}";
-    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-      pkgs.gcc
-      pkgs.libiconv
-      pkgs.llvmPackages.llvm
-    ];
-    CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_LINKER = "lld";
-  }
+  buildInputs = with pkgs; [
+    openssl
+    vips
+  ];
+}
