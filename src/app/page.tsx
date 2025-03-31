@@ -19,9 +19,9 @@ import logoHaskell from "@/images/clients/haskell-uzbekistan/logo-light.svg";
 import imageLaptop from "@/images/laptop.jpg";
 
 const clients = [
-  ["Haskell O'zbekiston", logoHaskell],
   ["Xinux", logoXinux],
   ["Rust O'zbekiston", logoRust],
+  ["Haskell O'zbekiston", logoHaskell],
   ["Devops Journey", logoDevOps],
 ];
 
