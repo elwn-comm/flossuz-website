@@ -73,7 +73,7 @@ const team = [
         name: "Kei Lissimus",
         role: "Rais / Yetakchi",
         link: "https://github.com/thelissimus",
-        image: { src: imageAngelaFisher },
+        image: { src: imageShakhzodKudratov },
       },
     ],
   },
@@ -96,7 +96,7 @@ const team = [
         name: "Bobomurod Mo'minov",
         role: "'Awesome' Boshqaruvi",
         link: "https://bobomurod.uz",
-        image: { src: imageAngelaFisher },
+        image: { src: imageShakhzodKudratov },
       },
       {
         name: "Ahmad Qodirov",

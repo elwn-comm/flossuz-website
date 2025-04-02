@@ -1,28 +1,28 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import { type Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { PageIntro } from '@/components/PageIntro'
-import { formatDate } from '@/lib/formatDate'
-import { loadArticles } from '@/lib/mdx'
+import { Border } from "@/components/Border";
+import { Button } from "@/components/Button";
+import { ContactSection } from "@/components/ContactSection";
+import { Container } from "@/components/Container";
+import { FadeIn } from "@/components/FadeIn";
+import { PageIntro } from "@/components/PageIntro";
+import { formatDate } from "@/lib/formatDate";
+import { loadArticles } from "@/lib/mdx";
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: "Blog",
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
-}
+    "Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.",
+};
 
 export default async function Blog() {
-  let articles = await loadArticles()
+  let articles = await loadArticles();
 
   return (
     <>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
+      <PageIntro eyebrow="Blog" title="Eng so'ngi yangilik va maqolalar">
         <p>
           Stay up-to-date with the latest industry news as our marketing teams
           finds new ways to re-purpose old CSS tricks articles.
@@ -85,5 +85,5 @@ export default async function Blog() {
 
       <ContactSection />
     </>
-  )
+  );
 }
