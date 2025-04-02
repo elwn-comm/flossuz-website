@@ -1,28 +1,24 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
+import { type Metadata } from "next";
+import Image from "next/image";
 
-import { Border } from '@/components/Border'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { GridList, GridListItem } from '@/components/GridList'
-import { PageIntro } from '@/components/PageIntro'
-import { PageLinks } from '@/components/PageLinks'
-import { SectionIntro } from '@/components/SectionIntro'
-import { StatList, StatListItem } from '@/components/StatList'
-import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
-import imageBenjaminRussel from '@/images/team/benjamin-russel.jpg'
-import imageBlakeReid from '@/images/team/blake-reid.jpg'
-import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-import imageDriesVincent from '@/images/team/dries-vincent.jpg'
-import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
-import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
-import imageKathrynMurphy from '@/images/team/kathryn-murphy.jpg'
-import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
-import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
-import imageMichaelFoster from '@/images/team/michael-foster.jpg'
-import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
-import { loadArticles } from '@/lib/mdx'
+import { Border } from "@/components/Border";
+import { ContactSection } from "@/components/ContactSection";
+import { Container } from "@/components/Container";
+import { FadeIn, FadeInStagger } from "@/components/FadeIn";
+import { GridList, GridListItem } from "@/components/GridList";
+import { PageIntro } from "@/components/PageIntro";
+import { PageLinks } from "@/components/PageLinks";
+import { SectionIntro } from "@/components/SectionIntro";
+import { StatList, StatListItem } from "@/components/StatList";
+import { loadArticles } from "@/lib/mdx";
+
+import imageOrzklv from "@/images/team/orzklv.jpg";
+import imageAkhmadKadirov from "@/images/team/akhmad-kadirov.jpg";
+import imageBahromRahmatov from "@/images/team/bahrom-rahmatov.jpg";
+import imageManuchehrUsmonov from "@/images/team/manuchehr-usmonov.jpg";
+import imageNodirbekNomonov from "@/images/team/nodirbek-nomonov.jpg";
+import imageOtabekIsmoilov from "@/images/team/otabek-ismoilov.jpg";
+import imageShakhzodKudratov from "@/images/team/shakhzod-kudratov.jpg";
 
 function Culture() {
   return (
@@ -54,69 +50,69 @@ function Culture() {
         </GridList>
       </Container>
     </div>
-  )
+  );
 }
 
 const team = [
   {
-    title: 'Yetakchi Jamoa',
+    title: "Yetakchi Jamoa",
     people: [
       {
-        name: 'Orzklv',
-        role: 'Asoschi / Yetakchi',
-        link: 'https://orzklv.uz',
-        image: { src: imageLeslieAlexander },
+        name: "Orzklv",
+        role: "Asoschi / Yetakchi",
+        link: "https://orzklv.uz",
+        image: { src: imageOrzklv },
       },
       {
-        name: 'Otabek Ismoilov',
-        role: 'Rais / Yetakchi',
-        link: 'https://github.com/ismoilovdevml',
-        image: { src: imageDriesVincent },
+        name: "Otabek Ismoilov",
+        role: "Rais / Yetakchi",
+        link: "https://github.com/ismoilovdevml",
+        image: { src: imageOtabekIsmoilov },
       },
       {
-        name: 'Kei Lissimus',
-        role: 'Rais / Yetakchi',
-        link: 'https://github.com/thelissimus',
-        image: { src: imageDriesVincent },
+        name: "Kei Lissimus",
+        role: "Rais / Yetakchi",
+        link: "https://github.com/thelissimus",
+        image: { src: imageAngelaFisher },
       },
     ],
   },
   {
-    title: 'Hamjamiyat Boshqarmalari',
+    title: "Hamjamiyat Boshqarmalari",
     people: [
       {
-        name: 'Shahzod Qudratov',
-        role: 'Hamjamiyatlar Boshqaruvi',
-        link: 'https://shakhzod.me',
-        image: { src: imageChelseaHagon },
+        name: "Shahzod Qudratov",
+        role: "Hamjamiyatlar Boshqaruvi",
+        link: "https://shakhzod.me",
+        image: { src: imageShakhzodKudratov },
       },
       {
-        name: 'Bahrom Rahmatov',
-        role: 'Mahalliylashtirish Raisi',
-        link: 'https://bahrom04.github.io',
-        image: { src: imageEmmaDorsey },
+        name: "Bahrom Rahmatov",
+        role: "Mahalliylashtirish Raisi",
+        link: "https://bahrom04.github.io",
+        image: { src: imageBahromRahmatov },
       },
       {
         name: "Bobomurod Mo'minov",
         role: "'Awesome' Boshqaruvi",
-        link: 'https://bobomurod.uz',
-        image: { src: imageBlakeReid },
+        link: "https://bobomurod.uz",
+        image: { src: imageAngelaFisher },
       },
       {
-        name: 'Ahmad Qodirov',
-        role: 'DevOps Journey',
-        link: 'https://orzklv.uz',
-        image: { src: imageLeonardKrasner },
+        name: "Ahmad Qodirov",
+        role: "DevOps Journey",
+        link: "https://orzklv.uz",
+        image: { src: imageAkhmadKadirov },
       },
       {
-        name: 'Manuchehr Usmonov',
-        role: 'Yordamchi Tashkilot',
-        link: 'https://manu.uz',
-        image: { src: imageKathrynMurphy },
+        name: "Manuchehr Usmonov",
+        role: "Yordamchi Tashkilot",
+        link: "https://manu.uz",
+        image: { src: imageManuchehrUsmonov },
       },
     ],
   },
-]
+];
 
 function Team() {
   return (
@@ -166,17 +162,17 @@ function Team() {
         ))}
       </div>
     </Container>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Biz haqimizda',
+  title: "Biz haqimizda",
   description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-}
+    "We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.",
+};
 
 export default async function About() {
-  let blogArticles = (await loadArticles()).slice(0, 2)
+  let blogArticles = (await loadArticles()).slice(0, 2);
 
   return (
     <>
@@ -221,5 +217,5 @@ export default async function About() {
 
       <ContactSection />
     </>
-  )
+  );
 }
