@@ -19,6 +19,7 @@ import imageManuchehrUsmonov from "@/images/team/manuchehr-usmonov.jpg";
 import imageNodirbekNomonov from "@/images/team/nodirbek-nomonov.jpg";
 import imageOtabekIsmoilov from "@/images/team/otabek-ismoilov.jpg";
 import imageShakhzodKudratov from "@/images/team/shakhzod-kudratov.jpg";
+import imageBobomurodMuminov from "@/images/team/bobomurod-muminov.jpg";
 
 function Culture() {
   return (
@@ -96,7 +97,7 @@ const team = [
         name: "Bobomurod Mo'minov",
         role: "'Awesome' Boshqaruvi",
         link: "https://bobomurod.uz",
-        image: { src: imageShakhzodKudratov },
+        image: { src: imageBobomurodMuminov },
       },
       {
         name: "Ahmad Qodirov",
