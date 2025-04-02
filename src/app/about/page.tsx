@@ -16,6 +16,7 @@ import imageOrzklv from "@/images/team/orzklv.jpg";
 import imageAkhmadKadirov from "@/images/team/akhmad-kadirov.jpg";
 import imageBahromRahmatov from "@/images/team/bahrom-rahmatov.jpg";
 import imageManuchehrUsmonov from "@/images/team/manuchehr-usmonov.jpg";
+import imageKeiLissimus from "@/images/team/kei-lissimus.jpg";
 import imageNodirbekNomonov from "@/images/team/nodirbek-nomonov.jpg";
 import imageOtabekIsmoilov from "@/images/team/otabek-ismoilov.jpg";
 import imageShakhzodKudratov from "@/images/team/shakhzod-kudratov.jpg";
@@ -74,7 +75,7 @@ const team = [
         name: "Kei Lissimus",
         role: "Rais / Yetakchi",
         link: "https://github.com/thelissimus",
-        image: { src: imageShakhzodKudratov },
+        image: { src: imageKeiLissimus },
       },
     ],
   },
@@ -104,6 +105,12 @@ const team = [
         role: "DevOps Journey",
         link: "https://orzklv.uz",
         image: { src: imageAkhmadKadirov },
+      },
+      {
+        name: "Nodirbek No'monov",
+        role: "`Trash` Boshqaruvi",
+        link: "https://portfolio.rarebek.uz",
+        image: { src: imageNodirbekNomonov },
       },
       {
         name: "Manuchehr Usmonov",

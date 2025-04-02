@@ -26,6 +26,11 @@ in
     src = ./.;
     npmDepsHash = "sha256-QZ2orsvo9mx6wNsdvwc67u3vXr6/nhH7vFoE+ViarKE=";
 
+    prePatch = ''
+      sed -i.bak "s/output: 'export',/output: 'standalone',/" next.config.mjs
+      sed -i.bak "s/unoptimized: true,/unoptimized: false,/" next.config.mjs
+    '';
+
     installPhase = ''
       # Create output directory
       mkdir -p $out
