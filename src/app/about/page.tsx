@@ -81,7 +81,7 @@ const team = [
     title: "Hamjamiyat Boshqarmalari",
     people: [
       {
-        name: "Shahzod Qudratov",
+        name: "Shaxzod Qudratov",
         role: "Hamjamiyatlar Boshqaruvi",
         link: "https://shakhzod.me",
         image: { src: imageShakhzodKudratov },
