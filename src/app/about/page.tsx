@@ -176,7 +176,7 @@ function Team() {
 export const metadata: Metadata = {
   title: "Biz haqimizda",
   description:
-    "We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.",
+    "O'zbekistonda ochiq dasturiy ta'minot madaniyatini rivojlantirish va dasturchilar uchun ijodiy va hamkorlik muhiti yaratishni maqsad qilgan tashabbusdir.",
 };
 
 export default async function About() {
