@@ -89,7 +89,7 @@ const team = [
         image: { src: imageShakhzodKudratov },
       },
       {
-        name: "Bahrom Rahmatov",
+        name: "Baxrom Raxmatov",
         role: "Mahalliylashtirish Raisi",
         link: "https://bahrom04.github.io",
         image: { src: imageBahromRahmatov },
