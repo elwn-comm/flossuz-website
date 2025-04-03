@@ -1,28 +1,28 @@
-import { type Metadata } from 'next'
+import { type Metadata } from "next";
 
-import { Blockquote } from '@/components/Blockquote'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { GridList, GridListItem } from '@/components/GridList'
-import { GridPattern } from '@/components/GridPattern'
-import { List, ListItem } from '@/components/List'
-import { PageIntro } from '@/components/PageIntro'
-import { SectionIntro } from '@/components/SectionIntro'
-import { StylizedImage } from '@/components/StylizedImage'
-import { TagList, TagListItem } from '@/components/TagList'
-import imageLaptop from '@/images/laptop.jpg'
-import imageMeeting from '@/images/meeting.jpg'
-import imageWhiteboard from '@/images/whiteboard.jpg'
+import { Blockquote } from "@/components/Blockquote";
+import { ContactSection } from "@/components/ContactSection";
+import { Container } from "@/components/Container";
+import { FadeIn } from "@/components/FadeIn";
+import { GridList, GridListItem } from "@/components/GridList";
+import { GridPattern } from "@/components/GridPattern";
+import { List, ListItem } from "@/components/List";
+import { PageIntro } from "@/components/PageIntro";
+import { SectionIntro } from "@/components/SectionIntro";
+import { StylizedImage } from "@/components/StylizedImage";
+import { TagList, TagListItem } from "@/components/TagList";
+import imageLaptop from "@/images/laptop.jpg";
+import imageMeeting from "@/images/meeting.jpg";
+import imageWhiteboard from "@/images/whiteboard.jpg";
 
 function Section({
   title,
   image,
   children,
 }: {
-  title: string
-  image: React.ComponentPropsWithoutRef<typeof StylizedImage>
-  children: React.ReactNode
+  title: string;
+  image: React.ComponentPropsWithoutRef<typeof StylizedImage>;
+  children: React.ReactNode;
 }) {
   return (
     <Container className="group/section [counter-increment:section]">
@@ -50,138 +50,140 @@ function Section({
         </div>
       </div>
     </Container>
-  )
+  );
 }
 
 function Discover() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Kashf qilish" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          Biz jamiyat a'zolarimiz, dasturchilar va ochiq manba muhitidagi
+          hamkorlarimiz bilan yaqin hamkorlikda ishlaymiz. Ularning
+          ehtiyojlarini chuqur tushunish, faoliyatini o‘rganish va ular duch
+          kelayotgan{" "}
+          <strong className="font-semibold text-neutral-950">
+            texnik yoki tashkiliy muammolarni
+          </strong>{"  "}
+          aniqlash biz uchun muhim.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          Tahliliy bosqichda biz ochiq manbali infratuzilma, mavjud loyihalar va
+          hamjamiyat faolligi ustida ishlaymiz. Maqsad — mavjud imkoniyatlar va
+          resurslarni aniqlash, shuningdek, ularni qanday{" "}
+          <strong className="font-semibold text-neutral-950">yaxshilash</strong>
+          {" "}
+          mumkinligini aniqlash.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          Bu bosqich tugagach, biz tahliliy hisobot, taklif etilgan yechimlar va
+          hamjamiyatga qo‘shilishni soddalashtiruvchi aniq reja bilan{" "}
+          <strong className="font-semibold text-neutral-950">hamjamiyat</strong>
+          {" "}
+          a'zolari orasida xoh ovoz berish, xoh suhbat darajasida muhokama qilib
+          olamiz.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Ushbu bosqich quyidagilarni o‘z ichiga oladi:
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Chuqur suhbatlar va intervyular</TagListItem>
+        <TagListItem>Hamjamiyat ehtiyojlarini tahlil qilish</TagListItem>
+        <TagListItem>Foydalanuvchi so‘rovnomalari</TagListItem>
+        <TagListItem>
+          Texnik imkoniyatlar bahosi
+        </TagListItem>
+        <TagListItem>Prototip g‘oyalar ishlab chiqish</TagListItem>
+        <TagListItem>Loyihalarning ochiqlik darajasini tekshirish</TagListItem>
       </TagList>
     </Section>
-  )
+  );
 }
 
 function Build() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Qurish" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          "Kashf qilish" bosqichidan so‘ng, har bir tashabbus uchun batafsil
+          yo‘l xaritasi ishlab chiqiladi va ishlar bosqichma-bosqich amalga
+          oshiriladi. Bu xarita loyihaning texnik asoslarini puxta
+          rejalashtirish va imkon qadar aniq yo‘nalishda harakat qilish imkonini
+          beradi.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          Har bir loyiha uchun alohida koordinatsion mas'ul tayinlanadi (rais) —
+          ular loyiha jarayonini kuzatib borish, hamjamiyat bilan doimiy aloqa
+          o‘rnatish va rivojlanishni hujjatlashtirish uchun javobgardir. Texnik
+          jamoamiz esa kod yozish, mavjud ochiq manbali loyihalarni tahlil
+          qilish va yangi funksionalliklarni ishlab chiqish ustida ishlaydi.
         </p>
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          Loyihani har doim oshkora olib boramiz, muntazam yangilanishlar
+          beriladi, shuningdek, barcha ishtirokchilar jarayonning har bir
+          bosqichida ishtirok etishadi.
         </p>
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{
+          name: "Manuchehr Usmonov",
+          role: "Uzinfocom dan Texnik Muhandis",
+        }}
         className="mt-12"
       >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
+        Floss jamoasi loyihaning har bir bosqichida yangilanishlar berib
+        borishdi – ular go‘yo avtomatlashtirilgandek tez va tartibli harakat
+        qilishdi!
       </Blockquote>
     </Section>
-  )
+  );
 }
 
 function Deliver() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="Yetkazib berish" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
+          "Qurish" bosqichi yakuniga yetgach, biz ishlab chiqilgan yechimni
+          hamjamiyatga taqdim etamiz. Bu bosqichda asosiy e'tibor{" "}
           <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
+            funksionallik,
+          </strong>{" "}
+          barqarorlik va foydalanishga tayyorlikni ta'minlashga qaratiladi.
         </p>
         <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
+          Jamoa barcha muhim sahifalar va funksiyalarni ishga tushirishdan oldin
+          sinovdan o‘tkazadi, texnik jihatdan tayyorlash va yakuniy sozlamalarni
+          amalga oshiradi. Biz foydalanuvchilar tomonidan haqiqiy foydalanishni
+          nazorat qilish uchun monitoring tizimlarini ham yo‘lga qo‘yamiz.
         </p>
         <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          Yechimlar to‘liq ishlayotganidan so‘ng, biz ularni hujjatlashtirib,
+          texnik yordam va xizmat ko‘rsatish rejasi bilan birgalikda taqdim
+          etamiz.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Ushbu bosqich quyidagilarni o‘z ichiga oladi:
       </h3>
       <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
+        <ListItem title="Testlash">
+          Testdan o‘tkazish va sifat nazorati
         </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
+        <ListItem title="Infratuzilma">
+          Infratuzilmani barqarorlashtirish (masalan, server konfiguratsiyasi)
         </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
+        <ListItem title="Qo'llab-quvvatlash">
+          Foydalanuvchi qo‘llanmalari va hujjatlar va hamda hamjamiyatga e’lon
+          qilish va taqdimotlar.
         </ListItem>
       </List>
     </Section>
-  )
+  );
 }
 
 function Values() {
@@ -196,63 +198,63 @@ function Values() {
 
       <SectionIntro
         eyebrow="Bizning qadriyatlarimiz"
-        title="Balancing reliability and innovation"
+        title="Ishonchlilik va innovatsiyani muvozanatlash"
       >
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          Biz har doim texnologik yangiliklar va zamonaviy yondashuvlar
+          markazida bo‘lishga intilamiz. Shu bilan birga, harakatlarimiz ochiq
+          manbali qadriyatlar, foydalanuvchi manfaatlari va jamiyat
+          ehtiyojlariga tayangan holda shakllanadi.
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Aniqlik">
+            Har bir hamkorlikka puxta tayyorgarlik bilan yondashamiz: dizayn,
+            texnik konfiguratsiya va yakuniy sinovlar izchil amalga oshiriladi.
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Samaradorlik">
+            Vaqtni qadrlaymiz va natijaga yo‘naltirilgan ish yuritamiz — har bir
+            bosqich puxta rejalashtiriladi.
           </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+          <GridListItem title="Moslashuvchanlik">
+            Har bir loyiha o‘ziga xos; biz har doim foydalanuvchi ehtiyojlariga
+            moslashishga tayyormiz.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Halollik">
+            Jarayonlarimizda ochiqlikni ta’minlaymiz, barcha ma’lumotlar shaffof
+            va tushunarli tarzda taqdim etiladi.
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Sadoqat">
+            Uzoq muddatli hamkorlikni qadrlaymiz; ishonch asosida qurilgan
+            aloqalar biz uchun ustuvor ahamiyatga ega.
           </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Innovatsiya">
+            Yangi texnologiyalarni o‘rganamiz, sinaymiz va ochiq manbali
+            ekotizimga o‘z hissamizni qo‘shamiz.
           </GridListItem>
         </GridList>
       </Container>
     </div>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Our Process',
+  title: "Bizning jarayonimiz",
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
-}
+    "Samarali, innovatsion va ochiq manbaga asoslangan yechimlar bilan jamiyatimizga maksimal qiymat yaratamiz.",
+};
 
 export default function Process() {
   return (
     <>
       <PageIntro eyebrow="Jarayon" title="Biz qanday ishlaymiz">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          Biz samaradorlik va ochiq manbali dasturlar orqali resurslarimizdan
+          maksimal foydalanishga ishonamiz. Bizning asosiy yondashuvimiz
+          innovatsion g'oyalarni doimiy ravishda rivojlantirish va hamjamiyat
+          bilan ochiq muloqot orqali yangiliklar yaratishdir.
         </p>
       </PageIntro>
 
@@ -266,5 +268,5 @@ export default function Process() {
 
       <ContactSection />
     </>
-  )
+  );
 }
