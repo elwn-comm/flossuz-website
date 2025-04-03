@@ -19,5 +19,8 @@ jobs:
       - name: Check up flake configuration
         run: nix flake check --all-systems --show-trace
 
-      - name: Build website
+      - name: Build website (Static contents)
         run: nix build
+
+      - name: Build website (Standalone contents)
+        run: nix build .#standalone

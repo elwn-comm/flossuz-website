@@ -10,7 +10,7 @@ flake: {
   cfg = config.services.floss-website;
 
   # Packaged server
-  server = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  server = flake.packages.${pkgs.stdenv.hostPlatform.system}.standalone;
 
   # Caddy module lugin
   caddy = lib.mkIf (cfg.enable && cfg.proxy.enable && cfg.proxy.proxy == "caddy") {

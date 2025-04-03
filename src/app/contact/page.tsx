@@ -1,20 +1,20 @@
-import { useId } from 'react'
-import { type Metadata } from 'next'
-import Link from 'next/link'
+import { useId } from "react";
+import { type Metadata } from "next";
+import Link from "next/link";
 
-import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { Offices } from '@/components/Offices'
-import { PageIntro } from '@/components/PageIntro'
-import { SocialMedia } from '@/components/SocialMedia'
+import { Border } from "@/components/Border";
+import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { FadeIn } from "@/components/FadeIn";
+import { Offices } from "@/components/Offices";
+import { PageIntro } from "@/components/PageIntro";
+import { SocialMedia } from "@/components/SocialMedia";
 
 function TextInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  let id = useId()
+}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
+  let id = useId();
 
   return (
     <div className="group relative z-0 transition-all focus-within:z-10">
@@ -32,13 +32,13 @@ function TextInput({
         {label}
       </label>
     </div>
-  )
+  );
 }
 
 function RadioInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
+}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
   return (
     <label className="flex gap-x-3">
       <input
@@ -48,7 +48,7 @@ function RadioInput({
       />
       <span className="text-base/6 text-neutral-950">{label}</span>
     </label>
-  )
+  );
 }
 
 function ContactForm() {
@@ -56,7 +56,7 @@ function ContactForm() {
     <FadeIn className="lg:order-last">
       <form>
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Ish bo‘yicha so‘rovlar
+          Faoliyat bo‘yicha so‘rovlar
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
           <TextInput label="Ism" name="name" autoComplete="name" />
@@ -97,7 +97,7 @@ function ContactForm() {
         </Button>
       </form>
     </FadeIn>
-  )
+  );
 }
 
 function ContactDetails() {
@@ -119,8 +119,8 @@ function ContactDetails() {
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
-            ['Rais', 'maintainers@floss.uz'],
-            ['Qo‘llab-quvvatlash', 'support@floss.uz'],
+            ["Rais", "maintainers@floss.uz"],
+            ["Qo‘llab-quvvatlash", "support@floss.uz"],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -144,13 +144,13 @@ function ContactDetails() {
         <SocialMedia className="mt-6" />
       </Border>
     </FadeIn>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Biz bilan bog‘laning',
-  description: 'Keling, birga ishlaylik. Sizdan xabar kutib qolamiz.',
-}
+  title: "Biz bilan bog‘laning",
+  description: "Keling, birga ishlaylik. Sizdan xabar kutib qolamiz.",
+};
 
 export default function Contact() {
   return (
@@ -166,5 +166,5 @@ export default function Contact() {
         </div>
       </Container>
     </>
-  )
+  );
 }
