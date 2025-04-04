@@ -30,10 +30,7 @@
         devShells.default = import ./shell.nix {inherit pkgs;};
 
         # Output package
-        packages = {
-          default = pkgs.callPackage ./default.nix {inherit pkgs;};
-          standalone = pkgs.callPackage ./default-stdl.nix {inherit pkgs;};
-        };
+        packages.default = pkgs.callPackage ./default.nix {inherit pkgs;};
       }
     )
     // {

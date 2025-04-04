@@ -128,7 +128,7 @@ function Team() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <h2 id="team">
-        <span class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl">
+        <span className="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl">
           Jamoamiz
         </span>
       </h2>
