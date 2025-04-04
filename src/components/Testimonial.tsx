@@ -1,23 +1,23 @@
-import Image, { type ImageProps } from "next/image";
-import clsx from "clsx";
+import Image, { type ImageProps } from 'next/image'
+import clsx from 'clsx'
 
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { GridPattern } from "@/components/GridPattern";
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { GridPattern } from '@/components/GridPattern'
 
 export function Testimonial({
   children,
   client,
   className,
 }: {
-  children: React.ReactNode;
-  client: { logo: ImageProps["src"]; name: string };
-  className?: string;
+  children: React.ReactNode
+  client: { logo: ImageProps['src']; name: string }
+  className?: string
 }) {
   return (
     <div
       className={clsx(
-        "relative isolate bg-neutral-50 py-16 sm:py-28 md:py-32",
+        'relative isolate bg-neutral-50 py-16 sm:py-28 md:py-32',
         className,
       )}
     >
@@ -45,5 +45,5 @@ export function Testimonial({
         </FadeIn>
       </Container>
     </div>
-  );
+  )
 }

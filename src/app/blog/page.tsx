@@ -1,24 +1,24 @@
-import { type Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { type Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Border } from "@/components/Border";
-import { Button } from "@/components/Button";
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { PageIntro } from "@/components/PageIntro";
-import { formatDate } from "@/lib/formatDate";
-import { loadArticles } from "@/lib/mdx";
+import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { PageIntro } from '@/components/PageIntro'
+import { formatDate } from '@/lib/formatDate'
+import { loadArticles } from '@/lib/mdx'
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: 'Blog',
   description:
     "Bizning olib borayotgan faoliyatimiz borasida eng so'ngi habar va maqolalardan bohabar bo'lib turing.",
-};
+}
 
 export default async function Blog() {
-  let articles = await loadArticles();
+  let articles = await loadArticles()
 
   return (
     <>
@@ -85,5 +85,5 @@ export default async function Blog() {
 
       <ContactSection />
     </>
-  );
+  )
 }

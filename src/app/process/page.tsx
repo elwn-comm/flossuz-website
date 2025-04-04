@@ -1,28 +1,28 @@
-import { type Metadata } from "next";
+import { type Metadata } from 'next'
 
-import { Blockquote } from "@/components/Blockquote";
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { GridList, GridListItem } from "@/components/GridList";
-import { GridPattern } from "@/components/GridPattern";
-import { List, ListItem } from "@/components/List";
-import { PageIntro } from "@/components/PageIntro";
-import { SectionIntro } from "@/components/SectionIntro";
-import { StylizedImage } from "@/components/StylizedImage";
-import { TagList, TagListItem } from "@/components/TagList";
-import imageLaptop from "@/images/laptop.jpg";
-import imageMeeting from "@/images/meeting.jpg";
-import imageWhiteboard from "@/images/whiteboard.jpg";
+import { Blockquote } from '@/components/Blockquote'
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { GridList, GridListItem } from '@/components/GridList'
+import { GridPattern } from '@/components/GridPattern'
+import { List, ListItem } from '@/components/List'
+import { PageIntro } from '@/components/PageIntro'
+import { SectionIntro } from '@/components/SectionIntro'
+import { StylizedImage } from '@/components/StylizedImage'
+import { TagList, TagListItem } from '@/components/TagList'
+import imageLaptop from '@/images/laptop.jpg'
+import imageMeeting from '@/images/meeting.jpg'
+import imageWhiteboard from '@/images/whiteboard.jpg'
 
 function Section({
   title,
   image,
   children,
 }: {
-  title: string;
-  image: React.ComponentPropsWithoutRef<typeof StylizedImage>;
-  children: React.ReactNode;
+  title: string
+  image: React.ComponentPropsWithoutRef<typeof StylizedImage>
+  children: React.ReactNode
 }) {
   return (
     <Container className="group/section [counter-increment:section]">
@@ -50,7 +50,7 @@ function Section({
         </div>
       </div>
     </Container>
-  );
+  )
 }
 
 function Discover() {
@@ -61,25 +61,24 @@ function Discover() {
           Biz jamiyat a'zolarimiz, dasturchilar va ochiq manba muhitidagi
           hamkorlarimiz bilan yaqin hamkorlikda ishlaymiz. Ularning
           ehtiyojlarini chuqur tushunish, faoliyatini o‘rganish va ular duch
-          kelayotgan{" "}
+          kelayotgan{' '}
           <strong className="font-semibold text-neutral-950">
             texnik yoki tashkiliy muammolarni
-          </strong>{"  "}
+          </strong>
+          {'  '}
           aniqlash biz uchun muhim.
         </p>
         <p>
           Tahliliy bosqichda biz ochiq manbali infratuzilma, mavjud loyihalar va
           hamjamiyat faolligi ustida ishlaymiz. Maqsad — mavjud imkoniyatlar va
-          resurslarni aniqlash, shuningdek, ularni qanday{" "}
-          <strong className="font-semibold text-neutral-950">yaxshilash</strong>
-          {" "}
+          resurslarni aniqlash, shuningdek, ularni qanday{' '}
+          <strong className="font-semibold text-neutral-950">yaxshilash</strong>{' '}
           mumkinligini aniqlash.
         </p>
         <p>
           Bu bosqich tugagach, biz tahliliy hisobot, taklif etilgan yechimlar va
-          hamjamiyatga qo‘shilishni soddalashtiruvchi aniq reja bilan{" "}
-          <strong className="font-semibold text-neutral-950">hamjamiyat</strong>
-          {" "}
+          hamjamiyatga qo‘shilishni soddalashtiruvchi aniq reja bilan{' '}
+          <strong className="font-semibold text-neutral-950">hamjamiyat</strong>{' '}
           a'zolari orasida xoh ovoz berish, xoh suhbat darajasida muhokama qilib
           olamiz.
         </p>
@@ -92,14 +91,12 @@ function Discover() {
         <TagListItem>Chuqur suhbatlar va intervyular</TagListItem>
         <TagListItem>Hamjamiyat ehtiyojlarini tahlil qilish</TagListItem>
         <TagListItem>Foydalanuvchi so‘rovnomalari</TagListItem>
-        <TagListItem>
-          Texnik imkoniyatlar bahosi
-        </TagListItem>
+        <TagListItem>Texnik imkoniyatlar bahosi</TagListItem>
         <TagListItem>Prototip g‘oyalar ishlab chiqish</TagListItem>
         <TagListItem>Loyihalarning ochiqlik darajasini tekshirish</TagListItem>
       </TagList>
     </Section>
-  );
+  )
 }
 
 function Build() {
@@ -129,8 +126,8 @@ function Build() {
 
       <Blockquote
         author={{
-          name: "Manuchehr Usmonov",
-          role: "Uzinfocom dan Texnik Muhandis",
+          name: 'Manuchehr Usmonov',
+          role: 'Uzinfocom dan Texnik Muhandis',
         }}
         className="mt-12"
       >
@@ -139,7 +136,7 @@ function Build() {
         qilishdi!
       </Blockquote>
     </Section>
-  );
+  )
 }
 
 function Deliver() {
@@ -148,10 +145,10 @@ function Deliver() {
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           "Qurish" bosqichi yakuniga yetgach, biz ishlab chiqilgan yechimni
-          hamjamiyatga taqdim etamiz. Bu bosqichda asosiy e'tibor{" "}
+          hamjamiyatga taqdim etamiz. Bu bosqichda asosiy e'tibor{' '}
           <strong className="font-semibold text-neutral-950">
             funksionallik,
-          </strong>{" "}
+          </strong>{' '}
           barqarorlik va foydalanishga tayyorlikni ta'minlashga qaratiladi.
         </p>
         <p>
@@ -183,7 +180,7 @@ function Deliver() {
         </ListItem>
       </List>
     </Section>
-  );
+  )
 }
 
 function Values() {
@@ -237,14 +234,14 @@ function Values() {
         </GridList>
       </Container>
     </div>
-  );
+  )
 }
 
 export const metadata: Metadata = {
-  title: "Bizning jarayonimiz",
+  title: 'Bizning jarayonimiz',
   description:
-    "Samarali, innovatsion va ochiq manbaga asoslangan yechimlar bilan jamiyatimizga maksimal qiymat yaratamiz.",
-};
+    'Samarali, innovatsion va ochiq manbaga asoslangan yechimlar bilan jamiyatimizga maksimal qiymat yaratamiz.',
+}
 
 export default function Process() {
   return (
@@ -268,5 +265,5 @@ export default function Process() {
 
       <ContactSection />
     </>
-  );
+  )
 }

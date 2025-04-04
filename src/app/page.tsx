@@ -1,29 +1,29 @@
-import { type Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { type Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn, FadeInStagger } from "@/components/FadeIn";
-import { List, ListItem } from "@/components/List";
-import { SectionIntro } from "@/components/SectionIntro";
-import { StylizedImage } from "@/components/StylizedImage";
-import { Testimonial } from "@/components/Testimonial";
-import { type CaseStudy, loadCaseStudies, type MDXEntry } from "@/lib/mdx";
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { List, ListItem } from '@/components/List'
+import { SectionIntro } from '@/components/SectionIntro'
+import { StylizedImage } from '@/components/StylizedImage'
+import { Testimonial } from '@/components/Testimonial'
+import { type CaseStudy, loadCaseStudies, type MDXEntry } from '@/lib/mdx'
 
-import logoXinux from "@/images/clients/xinux/logo-light.svg";
-import logoXinuxDark from "@/images/clients/xinux/logo-dark.svg";
-import logoRust from "@/images/clients/rust-uzbekistan/logo-light.svg";
-import logoDevOps from "@/images/clients/devops-journey/logo-light.svg";
-import logoHaskell from "@/images/clients/haskell-uzbekistan/logo-light.svg";
-import imageLaptop from "@/images/laptop.jpg";
+import logoXinux from '@/images/clients/xinux/logo-light.svg'
+import logoXinuxDark from '@/images/clients/xinux/logo-dark.svg'
+import logoRust from '@/images/clients/rust-uzbekistan/logo-light.svg'
+import logoDevOps from '@/images/clients/devops-journey/logo-light.svg'
+import logoHaskell from '@/images/clients/haskell-uzbekistan/logo-light.svg'
+import imageLaptop from '@/images/laptop.jpg'
 
 const clients = [
-  ["Xinux", logoXinux],
+  ['Xinux', logoXinux],
   ["Rust O'zbekiston", logoRust],
   ["Haskell O'zbekiston", logoHaskell],
-  ["Devops Journey", logoDevOps],
-];
+  ['Devops Journey', logoDevOps],
+]
 
 function Clients() {
   return (
@@ -51,13 +51,13 @@ function Clients() {
         </FadeInStagger>
       </Container>
     </div>
-  );
+  )
 }
 
 function CaseStudies({
   caseStudies,
 }: {
-  caseStudies: Array<MDXEntry<CaseStudy>>;
+  caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
     <>
@@ -89,10 +89,10 @@ function CaseStudies({
                 </h3>
                 <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
                   <time
-                    dateTime={caseStudy.date.split("-")[0]}
+                    dateTime={caseStudy.date.split('-')[0]}
                     className="font-semibold"
                   >
-                    {caseStudy.date.split("-")[0]}
+                    {caseStudy.date.split('-')[0]}
                   </time>
                   <span className="text-neutral-300" aria-hidden="true">
                     /
@@ -111,7 +111,7 @@ function CaseStudies({
         </FadeInStagger>
       </Container>
     </>
-  );
+  )
 }
 
 function Services() {
@@ -168,16 +168,16 @@ function Services() {
         </div>
       </Container>
     </>
-  );
+  )
 }
 
 export const metadata: Metadata = {
   description:
     "Biz hamjamiyatlarni birlashtirgan holda, ularni tartibga keltirib an'analarga shakl beramiz.",
-};
+}
 
 export default async function Home() {
-  let caseStudies = (await loadCaseStudies()).slice(0, 3);
+  let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
   return (
     <>
@@ -201,7 +201,7 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: "Xinux", logo: logoXinuxDark }}
+        client={{ name: 'Xinux', logo: logoXinuxDark }}
       >
         Hozirgi damda ko'plab hamjamiyatlar monopollashtirilgan va o'ta
         tartibsiz. Har xil standart va shakllar yordamida yordamida bu
@@ -213,5 +213,5 @@ export default async function Home() {
 
       <ContactSection />
     </>
-  );
+  )
 }

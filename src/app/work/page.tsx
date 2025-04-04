@@ -1,27 +1,27 @@
-import { type Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { type Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Blockquote } from "@/components/Blockquote";
-import { Border } from "@/components/Border";
-import { Button } from "@/components/Button";
-import { ContactSection } from "@/components/ContactSection";
-import { Container } from "@/components/Container";
-import { FadeIn, FadeInStagger } from "@/components/FadeIn";
-import { PageIntro } from "@/components/PageIntro";
-import { Testimonial } from "@/components/Testimonial";
-import { formatDate } from "@/lib/formatDate";
-import { type CaseStudy, loadCaseStudies, type MDXEntry } from "@/lib/mdx";
+import { Blockquote } from '@/components/Blockquote'
+import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { PageIntro } from '@/components/PageIntro'
+import { Testimonial } from '@/components/Testimonial'
+import { formatDate } from '@/lib/formatDate'
+import { type CaseStudy, loadCaseStudies, type MDXEntry } from '@/lib/mdx'
 
-import logoXinux from "@/images/clients/xinux/logo-dark.svg";
-import logoRust from "@/images/clients/rust-uzbekistan/logo-dark.svg";
-import logoDevOps from "@/images/clients/devops-journey/logo-dark.svg";
-import logoHaskell from "@/images/clients/haskell-uzbekistan/logo-dark.svg";
+import logoXinux from '@/images/clients/xinux/logo-dark.svg'
+import logoRust from '@/images/clients/rust-uzbekistan/logo-dark.svg'
+import logoDevOps from '@/images/clients/devops-journey/logo-dark.svg'
+import logoHaskell from '@/images/clients/haskell-uzbekistan/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
 }: {
-  caseStudies: Array<MDXEntry<CaseStudy>>;
+  caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
   return (
     <Container className="mt-40">
@@ -90,15 +90,15 @@ function CaseStudies({
         ))}
       </div>
     </Container>
-  );
+  )
 }
 
 const clients = [
   ["Haskell O'zbekistan", logoHaskell],
-  ["DevOps Journey", logoDevOps],
+  ['DevOps Journey', logoDevOps],
   ["Rust O'zbekistan", logoRust],
-  ["Xinux", logoXinux],
-];
+  ['Xinux', logoXinux],
+]
 
 function Clients() {
   return (
@@ -126,16 +126,16 @@ function Clients() {
         </ul>
       </FadeInStagger>
     </Container>
-  );
+  )
 }
 
 export const metadata: Metadata = {
-  title: "Bizning hamjamiyatlarimiz",
-  description: "Izlanishlar sari har xil muammolarga yechim topamiz.",
-};
+  title: 'Bizning hamjamiyatlarimiz',
+  description: 'Izlanishlar sari har xil muammolarga yechim topamiz.',
+}
 
 export default async function Work() {
-  let caseStudies = await loadCaseStudies();
+  let caseStudies = await loadCaseStudies()
 
   return (
     <>
@@ -157,14 +157,13 @@ export default async function Work() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: "Haskell O'zbekiston", logo: logoHaskell }}
       >
-        We approached <em>Studio</em>{" "}
-        because we loved their past work. They delivered something remarkably
-        similar in record time.
+        We approached <em>Studio</em> because we loved their past work. They
+        delivered something remarkably similar in record time.
       </Testimonial>
 
       <Clients />
 
       <ContactSection />
     </>
-  );
+  )
 }

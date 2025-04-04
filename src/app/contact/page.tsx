@@ -1,20 +1,21 @@
-import { useId } from "react";
-import { type Metadata } from "next";
-import Link from "next/link";
+import { useId } from 'react'
+import { type Metadata } from 'next'
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
-import { Border } from "@/components/Border";
-import { Button } from "@/components/Button";
-import { Container } from "@/components/Container";
-import { FadeIn } from "@/components/FadeIn";
-import { Offices } from "@/components/Offices";
-import { PageIntro } from "@/components/PageIntro";
-import { SocialMedia } from "@/components/SocialMedia";
+import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { Offices } from '@/components/Offices'
+import { PageIntro } from '@/components/PageIntro'
+import { SocialMedia } from '@/components/SocialMedia'
 
 function TextInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
-  let id = useId();
+}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
+  let id = useId()
 
   return (
     <div className="group relative z-0 transition-all focus-within:z-10">
@@ -32,13 +33,13 @@ function TextInput({
         {label}
       </label>
     </div>
-  );
+  )
 }
 
 function RadioInput({
   label,
   ...props
-}: React.ComponentPropsWithoutRef<"input"> & { label: string }) {
+}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
   return (
     <label className="flex gap-x-3">
       <input
@@ -48,13 +49,29 @@ function RadioInput({
       />
       <span className="text-base/6 text-neutral-950">{label}</span>
     </label>
-  );
+  )
 }
 
 function ContactForm() {
+  async function sendData(formData: FormData) {
+    'use server'
+
+    let data = Object.fromEntries(formData.entries())
+    formData.entries().forEach(([key, value]) => {
+      if (key.startsWith('$')) {
+        delete data[key]
+      }
+    })
+
+    // TODO: send data to registry later
+    console.log(data)
+
+    redirect('/process')
+  }
+
   return (
     <FadeIn className="lg:order-last">
-      <form>
+      <form action={sendData}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Faoliyat bo‘yicha so‘rovlar
         </h2>
@@ -97,7 +114,7 @@ function ContactForm() {
         </Button>
       </form>
     </FadeIn>
-  );
+  )
 }
 
 function ContactDetails() {
@@ -119,8 +136,8 @@ function ContactDetails() {
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
-            ["Rais", "maintainers@floss.uz"],
-            ["Qo‘llab-quvvatlash", "support@floss.uz"],
+            ['Rais', 'maintainers@floss.uz'],
+            ['Qo‘llab-quvvatlash', 'support@floss.uz'],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -144,13 +161,13 @@ function ContactDetails() {
         <SocialMedia className="mt-6" />
       </Border>
     </FadeIn>
-  );
+  )
 }
 
 export const metadata: Metadata = {
-  title: "Biz bilan bog‘laning",
-  description: "Keling, birga ishlaylik. Sizdan xabar kutib qolamiz.",
-};
+  title: 'Biz bilan bog‘laning',
+  description: 'Keling, birga ishlaylik. Sizdan xabar kutib qolamiz.',
+}
 
 export default function Contact() {
   return (
@@ -166,5 +183,5 @@ export default function Contact() {
         </div>
       </Container>
     </>
-  );
+  )
 }

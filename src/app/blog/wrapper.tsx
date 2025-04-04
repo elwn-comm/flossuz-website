@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/FadeIn'
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageLinks } from '@/components/PageLinks'
 import { formatDate } from '@/lib/formatDate'
-import { type Article, type MDXEntry, loadArticles } from '@/lib/mdx'
+import { type Article, loadArticles, type MDXEntry } from '@/lib/mdx'
 
 export default async function BlogArticleWrapper({
   article,
@@ -33,7 +33,7 @@ export default async function BlogArticleWrapper({
               {formatDate(article.date)}
             </time>
             <p className="mt-6 text-sm font-semibold text-neutral-950">
-              by {article.author.name}, {article.author.role}
+              {article.author.name}, {article.author.role} tomonidan
             </p>
           </header>
         </FadeIn>
