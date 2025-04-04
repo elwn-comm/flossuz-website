@@ -102,8 +102,8 @@ const team = [
       },
       {
         name: 'Ahmad Qodirov',
-        role: 'DevOps Journey',
-        link: 'https://orzklv.uz',
+        role: 'Funksional dasturlash boshqarmasi',
+        link: 'https://t.me/programming_everyone',
         image: { src: imageAkhmadKadirov },
       },
       {
