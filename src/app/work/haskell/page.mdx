@@ -1,15 +1,15 @@
 import logo from '@/images/clients/haskell-uzbekistan/logomark-dark.svg'
 import imageHero from './hero.jpg'
-import imageEmilySelman from './emily-selman.jpg'
+import imageKeiLissimus from '@/images/team/kei-lissimus.jpg'
 
 export const caseStudy = {
   client: "Haskell O'zbekiston",
   title: "Dasturlarni 'sof' yozishni izlanamiz",
   description:
-    "Xinux bu O'zbekistonda yagona Linux ga o'z hissasini qo'shuvchi va qo'llab quvvatlovchi hamjamiyatlardan biri.",
+    "Funksional dasturlash va hamda Obyektga asoslangan dasturlash paradigmasidan boshqa yo'nalishlarni izlanuvchi hamjamiyat.",
   summary: [
-    'Unseal is the first NFT platform where users can mint and trade NFTs of their own personal health records, allowing them to take control of their data.',
-    'We built out the blockchain infrastructure that supports Unseal. Unfortunately, we took a massive loss on this project when Unseal’s cryptocurrency, PlaceboCoin, went to zero.',
+    "O'zbekistonda Obyektga asoslangan paradigma deyarli hamma yerda o'rgatilgani va ishlatilgani sababli, ushbu paradigmani ortda qoldiruvchi boshqa paradigmalar o'rni pasayib ketgan.",
+    "Ushbu hamjamiyatda esa shu taraflama izlanishlar olib boriladi va Funksional dasturlash va boshqa shunga o'xshash paradigmalar, hamda ularning nazariyasiga e'tibor qaratiladi.",
   ],
   logo,
   image: { src: imageHero },
@@ -18,42 +18,49 @@ export const caseStudy = {
   testimonial: {
     author: { name: 'Kei', role: "Haskell O'zbekiston asoschisi" },
     content:
-      "Linux va uning ta'minoti bo'yicha savodxonlik keskin darajada pasayib bormoqda, ammo Xinux bu borada o'z yechimini bera oladi.",
+      "Dasturlash savodxonligi hozirgi damda asos va sabablarsiz qisqarib noto'g'ri shakllanib bormoqda. Buni esa bizlar  hamjamiyat bilan birgalikda qayta kashf qilamiz.",
   },
 }
 
 export const metadata = {
-  title: `${caseStudy.client} Case Study`,
+  title: `${caseStudy.client} Izlanishi`,
   description: caseStudy.description,
 }
 
-## Overview
+## Umumiy
 
-Annoyed that his wife’s gynaecologist would not disclose the results of her pap smear, Unseal’s founder Kevin came up with the idea of using the block chain to store individual health records.
+Boshida [Orzklv] ning qattiq ishtiyoqi bilan berilgan taklif keyinchalik [Kei] tomonidan [Orzklv] bilan birga asos solingan va [Ahmad] bilan bir guruh funksional dasturchilar guruhi birgalikda hozirgacha boshqarib kelinadigan hamjamiyatga aylangan.
 
-Unseal approached us early in their development, having just raised funds through an ICO of their cryptocurrency PlaceboCoin. Having never worked on a web3 product we decided to farm the project out to an agency in Kyiv and skim profits off the top. Despite frequent complaints about missile strikes and power outages, the Ukrainians delivered the brief ahead of schedule.
+Ushbu hamjamiyat paydo bo'lishidan asosiy sabab, hozirgi paytdagi [OOP (Obyektga asoslangan dasturlash)](https://en.wikipedia.org/wiki/Object-oriented_programming) paradigma ommalashib ketganidan hamma joylarda ushbu paradigma majburiy tarzda o'rgatilayotgani va hamda ishlatilayotganiga yechim sifatida ishlab chiqilgan.
 
-After reaching a high of $12k, PlaceboCoin went to zero in a matter of hours. Because we took payment in PlaceboCoin but our subcontractors insisted on being paid in USD we have taken a huge financial loss on this project.
+Ushbu hamjamiyatda funksional dasturlash va hamda dasturchi bilishi muhim bo'lgan, ammo ko'pincha e'tiborga olinmaydigan dasturlash umumiy nazariyalarini birgalikda chuqur izlanishlar qilgan holda, o'zbek dasturlash segmentiga dasturiy ta'minot yozish OOP dan ham qulay va samarali bo'lgan boshqa usul va metodologiyalarini yoritib beradi.
 
-## What we did
+## Nimalar qilinmoqda
 
 <TagList>
-  <TagListItem>Blockchain development</TagListItem>
-  <TagListItem>Backend (Solidity)</TagListItem>
-  <TagListItem>Smart contracts</TagListItem>
+  <TagListItem>Kategoriyalar nazariyasi</TagListItem>
+  <TagListItem>Kompilyatorlar injineriyasi</TagListItem>
+  <TagListItem>Formal Usullar</TagListItem>
+  <TagListItem>Funksional Dasturlash</TagListItem>
+  <TagListItem>Dasturlash Tili nazariyalari</TagListItem>
+  <TagListItem>Tiplar Nazariyasi</TagListItem>
 </TagList>
 
 <Blockquote
-  author={{ name: 'Emily Selman', role: 'Head of Engineering at Unseal' }}
-  image={{ src: imageEmilySelman }}
+  author={{ name: 'Kei Lissimus', role: "Haskell O'zbekiston asoschisi" }}
+  image={{ src: imageKeiLissimus }}
 >
   Studio did an amazing job building out our core blockchain infrastructure and
   I’m sure once PlaceboCoin rallies they’ll be able to finish the project.
 </Blockquote>
 
 <StatList>
-  <StatListItem value="34%" label="Fewer transactions" />
-  <StatListItem value="10%" label="Slower transactions" />
-  <StatListItem value="1000ms" label="Transaction latency" />
-  <StatListItem value="3" label="Active nodes" />
+  <StatListItem value="90" label="A'zolar soni" />
+  <StatListItem value="3+" label="Moderatorlar" />
+  <StatListItem value="12+" label="Texnik ichki yo'nalishlar" />
+  <StatListItem value="7+" label="Loyihalar" />
 </StatList>
+
+[Orzklv]: /about#chair
+[Kei]: /about#chair
+[Ahmad]: /about#maintainers

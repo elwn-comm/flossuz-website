@@ -1,26 +1,26 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
+import { type Metadata } from "next";
+import Image from "next/image";
 
-import { Border } from '@/components/Border'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { GridList, GridListItem } from '@/components/GridList'
-import { PageIntro } from '@/components/PageIntro'
-import { PageLinks } from '@/components/PageLinks'
-import { SectionIntro } from '@/components/SectionIntro'
-import { StatList, StatListItem } from '@/components/StatList'
-import { loadArticles } from '@/lib/mdx'
+import { Border } from "@/components/Border";
+import { ContactSection } from "@/components/ContactSection";
+import { Container } from "@/components/Container";
+import { FadeIn, FadeInStagger } from "@/components/FadeIn";
+import { GridList, GridListItem } from "@/components/GridList";
+import { PageIntro } from "@/components/PageIntro";
+import { PageLinks } from "@/components/PageLinks";
+import { SectionIntro } from "@/components/SectionIntro";
+import { StatList, StatListItem } from "@/components/StatList";
+import { loadArticles } from "@/lib/mdx";
 
-import imageOrzklv from '@/images/team/orzklv.jpg'
-import imageAkhmadKadirov from '@/images/team/akhmad-kadirov.jpg'
-import imageBahromRahmatov from '@/images/team/bahrom-rahmatov.jpg'
-import imageManuchehrUsmonov from '@/images/team/manuchehr-usmonov.jpg'
-import imageKeiLissimus from '@/images/team/kei-lissimus.jpg'
-import imageNodirbekNomonov from '@/images/team/nodirbek-nomonov.jpg'
-import imageOtabekIsmoilov from '@/images/team/otabek-ismoilov.jpg'
-import imageShakhzodKudratov from '@/images/team/shakhzod-kudratov.jpg'
-import imageBobomurodMuminov from '@/images/team/bobomurod-muminov.jpg'
+import imageOrzklv from "@/images/team/orzklv.jpg";
+import imageAkhmadKadirov from "@/images/team/akhmad-kadirov.jpg";
+import imageBahromRahmatov from "@/images/team/bahrom-rahmatov.jpg";
+import imageManuchehrUsmonov from "@/images/team/manuchehr-usmonov.jpg";
+import imageKeiLissimus from "@/images/team/kei-lissimus.jpg";
+import imageNodirbekNomonov from "@/images/team/nodirbek-nomonov.jpg";
+import imageOtabekIsmoilov from "@/images/team/otabek-ismoilov.jpg";
+import imageShakhzodKudratov from "@/images/team/shakhzod-kudratov.jpg";
+import imageBobomurodMuminov from "@/images/team/bobomurod-muminov.jpg";
 
 function Culture() {
   return (
@@ -52,84 +52,95 @@ function Culture() {
         </GridList>
       </Container>
     </div>
-  )
+  );
 }
 
 const team = [
   {
-    title: 'Yetakchi Jamoa',
+    id: "chair",
+    title: "Yetakchi Jamoa",
     people: [
       {
-        name: 'Orzklv',
-        role: 'Asoschi / Yetakchi',
-        link: 'https://orzklv.uz',
+        name: "Orzklv",
+        role: "Asoschi / Yetakchi",
+        link: "https://orzklv.uz",
         image: { src: imageOrzklv },
       },
       {
-        name: 'Otabek Ismoilov',
-        role: 'Rais / Yetakchi',
-        link: 'https://github.com/ismoilovdevml',
+        name: "Otabek Ismoilov",
+        role: "Rais / Yetakchi",
+        link: "https://github.com/ismoilovdevml",
         image: { src: imageOtabekIsmoilov },
       },
       {
-        name: 'Kei Lissimus',
-        role: 'Rais / Yetakchi',
-        link: 'https://github.com/thelissimus',
+        name: "Kei Lissimus",
+        role: "Rais / Yetakchi",
+        link: "https://github.com/thelissimus",
         image: { src: imageKeiLissimus },
       },
     ],
   },
   {
-    title: 'Hamjamiyat Boshqarmalari',
+    id: "maintainers",
+    title: "Hamjamiyat Boshqarmalari",
     people: [
       {
-        name: 'Shaxzod Qudratov',
-        role: 'Hamjamiyatlar Boshqaruvi',
-        link: 'https://shakhzod.me',
+        name: "Shaxzod Qudratov",
+        role: "Hamjamiyatlar Boshqaruvi",
+        link: "https://shakhzod.me",
         image: { src: imageShakhzodKudratov },
       },
       {
-        name: 'Baxrom Raxmatov',
-        role: 'Mahalliylashtirish Raisi',
-        link: 'https://bahrom04.github.io',
+        name: "Baxrom Raxmatov",
+        role: "Mahalliylashtirish Raisi",
+        link: "https://bahrom04.github.io",
         image: { src: imageBahromRahmatov },
       },
       {
         name: "Bobomurod Mo'minov",
         role: "'Awesome' Boshqaruvi",
-        link: 'https://bobomurod.uz',
+        link: "https://bobomurod.uz",
         image: { src: imageBobomurodMuminov },
       },
       {
-        name: 'Ahmad Qodirov',
-        role: 'Funksional dasturlash boshqarmasi',
-        link: 'https://t.me/programming_everyone',
+        name: "Ahmad Qodirov",
+        role: "`Funksional Dasturlash` boshqarmasi",
+        link: "https://t.me/programming_everyone",
         image: { src: imageAkhmadKadirov },
       },
       {
         name: "Nodirbek No'monov",
-        role: '`Trash` Boshqaruvi',
-        link: 'https://portfolio.rarebek.uz',
+        role: "`Trash` Boshqaruvi",
+        link: "https://portfolio.rarebek.uz",
         image: { src: imageNodirbekNomonov },
       },
       {
-        name: 'Manuchehr Usmonov',
-        role: 'Yordamchi Tashkilot',
-        link: 'https://manu.uz',
+        name: "Manuchehr Usmonov",
+        role: "Yordamchi Tashkilot",
+        link: "https://manu.uz",
         image: { src: imageManuchehrUsmonov },
       },
     ],
   },
-]
+];
 
 function Team() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <h2 id="team">
+        <span class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl">
+          Jamoamiz
+        </span>
+      </h2>
+
       <div className="space-y-24">
         {team.map((group) => (
           <FadeInStagger key={group.title}>
             <Border as={FadeIn} />
-            <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
+            <div
+              id={group.id}
+              className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8"
+            >
               <FadeIn>
                 <h2 className="font-display text-2xl font-semibold text-neutral-950">
                   {group.title}
@@ -170,17 +181,17 @@ function Team() {
         ))}
       </div>
     </Container>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Biz haqimizda',
+  title: "Biz haqimizda",
   description:
     "O'zbekistonda ochiq dasturiy ta'minot madaniyatini rivojlantirish va dasturchilar uchun ijodiy va hamkorlik muhiti yaratishni maqsad qilgan tashabbusdir.",
-}
+};
 
 export default async function About() {
-  let blogArticles = (await loadArticles()).slice(0, 2)
+  let blogArticles = (await loadArticles()).slice(0, 2);
 
   return (
     <>
@@ -225,5 +236,5 @@ export default async function About() {
 
       <ContactSection />
     </>
-  )
+  );
 }
