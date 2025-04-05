@@ -105,7 +105,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Siz ishonchli qo'llar ostidasiz
+          Biz bilan birga maqsad sari intilamiz!
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -157,8 +157,7 @@ export default async function Work() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: "Haskell O'zbekiston", logo: logoHaskell }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
+        Dasturlash va fikrlash savodxonligi hozirgi damda noto'g'ri shakllanib bormoqda. Buni bizlar hamjamiyat bilan birgalikda qayta kashf qilamiz va to'g'irlashga intilamiz.
       </Testimonial>
 
       <Clients />
