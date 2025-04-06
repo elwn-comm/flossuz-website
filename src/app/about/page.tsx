@@ -243,7 +243,7 @@ export default async function About() {
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="1323+" label="A'zolar soni" />
+          <StatListItem value="1823+" label="A'zolar soni" />
           <StatListItem value="4" label="Hamjamiyatlar" />
           <StatListItem value="12+" label="Loyihalar" />
         </StatList>
