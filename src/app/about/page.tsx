@@ -208,6 +208,32 @@ export default async function About() {
             uning qadriyatlari haqida kelishib olingach, hozirgi nom va holatga
             keltirilgan tashkilot.
           </p>
+          <p className="font-bold">
+            Aslida, Floss O'zbekistondan tashqari boshqa sentrallashgan "
+            <a className="underline" href="https://itcom.uz">
+              O'zbekiston IT Hamjamiyati
+            </a>
+            " ham mavjud, ammo asosiy muammo shundaki, ushbu jamiyat
+            dasturchilarga ko'proq iqtisodiy yoki analitika taraflama yondashadi
+            va texnik yo'nalishida hech qanday harakat olib borilmaydi. Biz esa,
+            dasturchilarning eng og'riqli nuqtasi hisoblanmish, aynan texnik
+            qismiga ko'proq yondashamiz.
+          </p>
+
+          <Border position="left" className={'my-10 pl-8'}>
+            <p className="font-display text-sm font-bold tracking-widest text-neutral-950 uppercase">
+              Eslatma!
+            </p>
+            <div className="mt-4">
+              Floss O'zbekiston bu mustaqil va notijorat tashkilot. Ushbu
+              tashkilot "
+              <a className="underline" href="https://itcom.uz">
+                O'zbekiston IT Hamjamiyati
+              </a>
+              " bilan hech qanday bog'liqligi yo'q va uning bir qismi ham emas.
+            </div>
+          </Border>
+
           <p>
             Bizning asosiy maqsadimiz, biz ochiq manbali dasturiy ta'minot
             tamoyillarini ommalashtirish, bilim almashish hamda dasturchilar
