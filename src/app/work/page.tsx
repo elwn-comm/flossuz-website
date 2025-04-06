@@ -157,7 +157,9 @@ export default async function Work() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: "Haskell O'zbekiston", logo: logoHaskell }}
       >
-        Dasturlash va fikrlash savodxonligi hozirgi damda noto'g'ri shakllanib bormoqda. Buni bizlar hamjamiyat bilan birgalikda qayta kashf qilamiz va to'g'irlashga intilamiz.
+        Dasturlash va fikrlash savodxonligi hozirgi damda noto'g'ri shakllanib
+        bormoqda. Buni bizlar hamjamiyat bilan birgalikda qayta kashf qilamiz va
+        to'g'irlashga intilamiz.
       </Testimonial>
 
       <Clients />
