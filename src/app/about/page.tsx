@@ -209,7 +209,7 @@ export default async function About() {
             keltirilgan tashkilot.
           </p>
           <p className="font-bold">
-            Aslida, Floss O'zbekistondan tashqari boshqa sentrallashgan "
+            Aslida, Floss O'zbekistondan tashqari boshqa markazlashgan "
             <a className="underline" href="https://itcom.uz">
               O'zbekiston IT Hamjamiyati
             </a>
