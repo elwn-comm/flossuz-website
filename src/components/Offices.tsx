@@ -32,10 +32,13 @@ export function Offices({
   return (
     <ul role="list" {...props}>
       <li>
-        <Office name="Uzinfocom" invert={invert}>
+        {/* <Office name="Uzinfocom" invert={invert}>
           Muminova 7/1
           <br />
           Tashkent Uzbekistan
+        </Office> */}
+        <Office name="Masofaviy" invert={invert}>
+          Hozirgi vaqtda ofis mavjud emas.
         </Office>
       </li>
     </ul>
