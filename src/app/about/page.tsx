@@ -21,6 +21,8 @@ import imageNodirbekNomonov from '@/images/team/nodirbek-nomonov.jpg'
 import imageOtabekIsmoilov from '@/images/team/otabek-ismoilov.jpg'
 import imageShakhzodKudratov from '@/images/team/shakhzod-kudratov.jpg'
 import imageBobomurodMuminov from '@/images/team/bobomurod-muminov.jpg'
+import imageRustamMamadaminov from '@/images/team/rustam-mamadaminov.jpg'
+import imageDiyorbekRustamjonov from '@/images/team/diyorbek-rustamjonov.jpg'
 
 function Culture() {
   return (
@@ -68,15 +70,27 @@ const team = [
       },
       {
         name: 'Otabek Ismoilov',
-        role: 'Rais / Yetakchi',
+        role: "`O'zbek DevOps` rais / Yetakchi",
         link: 'https://github.com/ismoilovdevml',
         image: { src: imageOtabekIsmoilov },
       },
       {
         name: 'Kei Lissimus',
-        role: 'Rais / Yetakchi',
+        role: '`Funksional Dasturlash` rais / Yetakchi',
         link: 'https://github.com/thelissimus',
         image: { src: imageKeiLissimus },
+      },
+      {
+        name: 'Ahmad Qodirov',
+        role: '`Funksional Dasturlash` rais / Yetakchi',
+        link: 'https://t.me/programming_everyone',
+        image: { src: imageAkhmadKadirov },
+      },
+      {
+        name: 'Rustam Mamadaminov',
+        role: "`O'zbek Ecma` rais / Yetakchi",
+        link: 'https://t.me/rustamwin_blog',
+        image: { src: imageRustamMamadaminov },
       },
     ],
   },
@@ -103,10 +117,10 @@ const team = [
         image: { src: imageBobomurodMuminov },
       },
       {
-        name: 'Ahmad Qodirov',
-        role: '`Funksional Dasturlash` boshqarmasi',
-        link: 'https://t.me/programming_everyone',
-        image: { src: imageAkhmadKadirov },
+        name: 'Diyorbek Rustamjonov',
+        role: "`O'zbek Ecma` boshqarmasi",
+        link: 'https://www.xattab.uz',
+        image: { src: imageDiyorbekRustamjonov },
       },
       {
         name: "Nodirbek No'monov",

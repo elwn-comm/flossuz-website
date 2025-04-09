@@ -17,6 +17,8 @@ import logoXinux from '@/images/clients/xinux/logo-dark.svg'
 import logoRust from '@/images/clients/rust-uzbekistan/logo-dark.svg'
 import logoDevOps from '@/images/clients/devops-journey/logo-dark.svg'
 import logoHaskell from '@/images/clients/haskell-uzbekistan/logo-dark.svg'
+import logoScala from '@/images/clients/scala-uzbekistan/logo-dark.svg'
+import logoEcma from '@/images/clients/ecma-uzbekistan/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
@@ -98,6 +100,8 @@ const clients = [
   ['DevOps Journey', logoDevOps],
   ["Rust O'zbekistan", logoRust],
   ['Xinux', logoXinux],
+  ['Scala Uzbekistan', logoScala],
+  ['Ecma Uzbekistan', logoEcma],
 ]
 
 function Clients() {
