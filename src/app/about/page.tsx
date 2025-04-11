@@ -23,6 +23,7 @@ import imageShakhzodKudratov from '@/images/team/shakhzod-kudratov.jpg'
 import imageBobomurodMuminov from '@/images/team/bobomurod-muminov.jpg'
 import imageRustamMamadaminov from '@/images/team/rustam-mamadaminov.jpg'
 import imageDiyorbekRustamjonov from '@/images/team/diyorbek-rustamjonov.jpg'
+import imageHusniddinQurbonboyev from '@/images/team/husniddin-qurbonboyev.jpg'
 
 function Culture() {
   return (
@@ -91,6 +92,12 @@ const team = [
         role: "`O'zbek Ecma` rais / Yetakchi",
         link: 'https://t.me/rustamwin_blog',
         image: { src: imageRustamMamadaminov },
+      },
+      {
+        name: 'Husniddin Qurbonboyev',
+        role: "`O'zbek Ecma` rais / Yetakchi",
+        link: 'https://www.linkedin.com/in/husniddin-qurbonboyev-8906b5168/',
+        image: { src: imageHusniddinQurbonboyev },
       },
     ],
   },
