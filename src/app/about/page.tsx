@@ -24,6 +24,7 @@ import imageBobomurodMuminov from '@/images/team/bobomurod-muminov.jpg'
 import imageRustamMamadaminov from '@/images/team/rustam-mamadaminov.jpg'
 import imageDiyorbekRustamjonov from '@/images/team/diyorbek-rustamjonov.jpg'
 import imageHusniddinQurbonboyev from '@/images/team/husniddin-qurbonboyev.jpg'
+import imageJavokhirAbdusattorov from '@/images/team/abdusattorov-javokhir.jpg'
 
 function Culture() {
   return (
@@ -128,6 +129,12 @@ const team = [
         role: "`O'zbek Ecma` boshqarmasi",
         link: 'https://www.xattab.uz',
         image: { src: imageDiyorbekRustamjonov },
+      },
+      {
+        name: 'Javohir Abdusattorov',
+        role: "`Rust O'zbekiston` boshqarmasi",
+        link: 'https://github.com/javohir-abdusattorov',
+        image: { src: imageJavokhirAbdusattorov },
       },
       {
         name: "Nodirbek No'monov",
