@@ -25,6 +25,7 @@ import imageRustamMamadaminov from '@/images/team/rustam-mamadaminov.jpg'
 import imageDiyorbekRustamjonov from '@/images/team/diyorbek-rustamjonov.jpg'
 import imageHusniddinQurbonboyev from '@/images/team/husniddin-qurbonboyev.jpg'
 import imageJavokhirAbdusattorov from '@/images/team/abdusattorov-javokhir.jpg'
+import imageShahruzNorimmatov from '@/images/team/shahruz-norimmatov.jpg'
 
 function Culture() {
   return (
@@ -135,6 +136,12 @@ const team = [
         role: "`Rust O'zbekiston` boshqarmasi",
         link: 'https://github.com/javohir-abdusattorov',
         image: { src: imageJavokhirAbdusattorov },
+      },
+      {
+        name: 'Shahruz Norimmatov',
+        role: "`Xinux` boshqarmasi",
+        link: 'https://github.com/zawkindev',
+        image: { src: imageShahruzNorimmatov },
       },
       {
         name: "Nodirbek No'monov",
