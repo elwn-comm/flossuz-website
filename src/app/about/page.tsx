@@ -119,13 +119,6 @@ const team = [
         link: 'https://shakhzod.me',
         image: { src: imageShakhzodKudratov },
       },
-
-      {
-        name: "Bobomurod Mo'minov",
-        role: "'Awesome' Boshqaruvi",
-        link: 'https://bobomurod.uz',
-        image: { src: imageBobomurodMuminov },
-      },
       {
         name: 'Diyorbek Rustamjonov',
         role: "`O'zbek Ecma` boshqarmasi",
@@ -149,6 +142,12 @@ const team = [
         role: '`Trash` Boshqaruvi',
         link: 'https://portfolio.rarebek.uz',
         image: { src: imageNodirbekNomonov },
+      },
+      {
+        name: "Bobomurod Mo'minov",
+        role: "'Awesome' Boshqaruvi",
+        link: 'https://bobomurod.uz',
+        image: { src: imageBobomurodMuminov },
       },
       {
         name: 'Manuchehr Usmonov',
