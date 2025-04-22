@@ -90,10 +90,10 @@ const team = [
         image: { src: imageAkhmadKadirov },
       },
       {
-        name: 'Rustam Mamadaminov',
-        role: "`O'zbek Ecma` rais / Yetakchi",
-        link: 'https://t.me/rustamwin_blog',
-        image: { src: imageRustamMamadaminov },
+        name: 'Baxrom Raxmatov',
+        role: "`O'zbek Mahalliylashtirish` rais / Yetakchi",
+        link: 'https://bahrom04.github.io',
+        image: { src: imageBahromRahmatov },
       },
       {
         name: 'Husniddin Qurbonboyev',
@@ -101,6 +101,13 @@ const team = [
         link: 'https://www.linkedin.com/in/husniddin-qurbonboyev-8906b5168/',
         image: { src: imageHusniddinQurbonboyev },
       },
+      {
+        name: 'Rustam Mamadaminov',
+        role: "`O'zbek Ecma` rais / Yetakchi",
+        link: 'https://t.me/rustamwin_blog',
+        image: { src: imageRustamMamadaminov },
+      },
+
     ],
   },
   {
@@ -113,12 +120,7 @@ const team = [
         link: 'https://shakhzod.me',
         image: { src: imageShakhzodKudratov },
       },
-      {
-        name: 'Baxrom Raxmatov',
-        role: 'Mahalliylashtirish Raisi',
-        link: 'https://bahrom04.github.io',
-        image: { src: imageBahromRahmatov },
-      },
+
       {
         name: "Bobomurod Mo'minov",
         role: "'Awesome' Boshqaruvi",
