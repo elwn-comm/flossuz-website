@@ -72,12 +72,6 @@ const team = [
         image: { src: imageOrzklv },
       },
       {
-        name: 'Otabek Ismoilov',
-        role: "`O'zbek DevOps` rais / Yetakchi",
-        link: 'https://github.com/ismoilovdevml',
-        image: { src: imageOtabekIsmoilov },
-      },
-      {
         name: 'Kei Lissimus',
         role: '`Funksional Dasturlash` rais / Yetakchi',
         link: 'https://github.com/thelissimus',
@@ -107,7 +101,12 @@ const team = [
         link: 'https://t.me/rustamwin_blog',
         image: { src: imageRustamMamadaminov },
       },
-
+      {
+        name: 'Otabek Ismoilov',
+        role: "`O'zbek DevOps` rais / Yetakchi",
+        link: 'https://github.com/ismoilovdevml',
+        image: { src: imageOtabekIsmoilov },
+      },
     ],
   },
   {
