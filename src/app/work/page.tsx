@@ -19,6 +19,7 @@ import logoDevOps from '@/images/clients/devops-journey/logo-dark.svg'
 import logoHaskell from '@/images/clients/haskell-uzbekistan/logo-dark.svg'
 import logoScala from '@/images/clients/scala-uzbekistan/logo-dark.svg'
 import logoEcma from '@/images/clients/ecma-uzbekistan/logo-dark.svg'
+import logoUzbekNet from '@/images/clients/uzbek-net/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
@@ -102,6 +103,7 @@ const clients = [
   ['Xinux', logoXinux],
   ['Scala Uzbekistan', logoScala],
   ['Ecma Uzbekistan', logoEcma],
+  ['Uzbek Localization', logoUzbekNet],
 ]
 
 function Clients() {
