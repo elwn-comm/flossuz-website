@@ -90,10 +90,10 @@ const team = [
         image: { src: imageBahromRahmatov },
       },
       {
-        name: 'Husniddin Qurbonboyev',
+        name: 'Diyorbek Rustamjonov',
         role: "`O'zbek Ecma` rais / Yetakchi",
-        link: 'https://www.linkedin.com/in/husniddin-qurbonboyev-8906b5168/',
-        image: { src: imageHusniddinQurbonboyev },
+        link: 'https://www.xattab.uz',
+        image: { src: imageDiyorbekRustamjonov },
       },
       {
         name: 'Rustam Mamadaminov',
@@ -120,12 +120,6 @@ const team = [
         image: { src: imageShakhzodKudratov },
       },
       {
-        name: 'Diyorbek Rustamjonov',
-        role: "`O'zbek Ecma` boshqarmasi",
-        link: 'https://www.xattab.uz',
-        image: { src: imageDiyorbekRustamjonov },
-      },
-      {
         name: 'Javohir Abdusattorov',
         role: "`Rust O'zbekiston` boshqarmasi",
         link: 'https://github.com/javohir-abdusattorov',
@@ -148,6 +142,12 @@ const team = [
         role: "'Awesome' Boshqaruvi",
         link: 'https://bobomurod.uz',
         image: { src: imageBobomurodMuminov },
+      },
+      {
+        name: 'Husniddin Qurbonboyev',
+        role: "`O'zbek Ecma` boshqarmasi",
+        link: 'https://www.linkedin.com/in/husniddin-qurbonboyev-8906b5168/',
+        image: { src: imageHusniddinQurbonboyev },
       },
       {
         name: 'Manuchehr Usmonov',
