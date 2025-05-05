@@ -24,15 +24,15 @@ import logoPhp from '@/images/clients/php-uzbekistan/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 
 const clients = [
-  ['Xinux', logoXinux],
-  ["Rust O'zbekiston", logoRust],
-  ["Haskell O'zbekiston", logoHaskell],
-  ['Devops Journey', logoDevOps],
-  ['Scala Uzbekistan', logoScala],
-  ['Ecma Uzbekistan', logoEcma],
-  ['Uzbek Localization', logoUzbekNet],
-  ['Gofer Uzbekistan', logoGofer],
-  ['PHP Uzbekistan', logoPhp],
+  ['Xinux', logoXinux, "https://github.com/xinux-org"],
+  ["Rust O'zbekiston", logoRust, "https://github.com/rust-lang-uz"],
+  ["Haskell O'zbekiston", logoHaskell, "https://github.com/haskelluz"],
+  ['Devops Journey', logoDevOps, "https://github.com/devops-journey-uz"],
+  ['Scala Uzbekistan', logoScala, "https://github.com/scala-uz"],
+  ['Ecma Uzbekistan', logoEcma, "https://github.com/ecma-uz"],
+  ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
+  ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
+  ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
 ]
 
 function Clients() {
@@ -50,11 +50,13 @@ function Clients() {
             role="list"
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]) => (
+            {clients.map(([client, logo, link]) => (
               <li key={client}>
-                <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
-                </FadeIn>
+                <a href={link}>
+                  <FadeIn>
+                    <Image src={logo} alt={client} unoptimized />
+                  </FadeIn>
+                </a>
               </li>
             ))}
           </ul>
