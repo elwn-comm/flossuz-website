@@ -20,6 +20,7 @@ import logoScala from '@/images/clients/ecma-uzbekistan/logo-light.svg'
 import logoEcma from '@/images/clients/scala-uzbekistan/logo-light.svg'
 import logoUzbekNet from '@/images/clients/uzbek-net/logo-light.svg'
 import logoGofer from '@/images/clients/gofer-uzbekistan/logo-light.svg'
+import logoPhp from '@/images/clients/php-uzbekistan/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 
 const clients = [
@@ -31,6 +32,7 @@ const clients = [
   ['Ecma Uzbekistan', logoEcma],
   ['Uzbek Localization', logoUzbekNet],
   ['Gofer Uzbekistan', logoGofer],
+  ['PHP Uzbekistan', logoPhp],
 ]
 
 function Clients() {

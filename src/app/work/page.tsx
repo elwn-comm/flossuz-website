@@ -21,6 +21,7 @@ import logoScala from '@/images/clients/scala-uzbekistan/logo-dark.svg'
 import logoEcma from '@/images/clients/ecma-uzbekistan/logo-dark.svg'
 import logoUzbekNet from '@/images/clients/uzbek-net/logo-dark.svg'
 import logoGofer from '@/images/clients/gofer-uzbekistan/logo-dark.svg'
+import logoPhp from '@/images/clients/php-uzbekistan/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
@@ -106,6 +107,7 @@ const clients = [
   ['Ecma Uzbekistan', logoEcma],
   ['Uzbek Localization', logoUzbekNet],
   ['Gofer Uzbekistan', logoGofer],
+  ['PHP Uzbekistan', logoPhp],
 ]
 
 function Clients() {
