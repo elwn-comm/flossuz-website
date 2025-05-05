@@ -99,15 +99,15 @@ function CaseStudies({
 }
 
 const clients = [
-  ["Haskell O'zbekistan", logoHaskell],
-  ['DevOps Journey', logoDevOps],
-  ["Rust O'zbekistan", logoRust],
-  ['Xinux', logoXinux],
-  ['Scala Uzbekistan', logoScala],
-  ['Ecma Uzbekistan', logoEcma],
-  ['Uzbek Localization', logoUzbekNet],
-  ['Gofer Uzbekistan', logoGofer],
-  ['PHP Uzbekistan', logoPhp],
+  ['Xinux', logoXinux, "https://github.com/xinux-org"],
+  ["Rust O'zbekistan", logoRust, "https://github.com/rust-lang-uz"],
+  ["Haskell O'zbekistan", logoHaskell, "https://github.com/haskelluz"],
+  ['DevOps Journey', logoDevOps, "https://github.com/devops-journey-uz"],
+  ['Scala Uzbekistan', logoScala, "https://github.com/scala-uz"],
+  ['Ecma Uzbekistan', logoEcma, "https://github.com/ecma-uz"],
+  ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
+  ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
+  ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
 ]
 
 function Clients() {
@@ -124,13 +124,15 @@ function Clients() {
           role="list"
           className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
         >
-          {clients.map(([client, logo]) => (
+          {clients.map(([client, logo, link]) => (
             <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
+              <a href={link}>
+                <FadeIn className="overflow-hidden">
+                  <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
+                    <Image src={logo} alt={client} unoptimized />
+                  </Border>
+                </FadeIn>
+              </a>
             </li>
           ))}
         </ul>
