@@ -27,6 +27,7 @@ import imageHusniddinQurbonboyev from '@/images/team/husniddin-qurbonboyev.jpg'
 import imageJavokhirAbdusattorov from '@/images/team/abdusattorov-javokhir.jpg'
 import imageShahruzNorimmatov from '@/images/team/shahruz-norimmatov.jpg'
 import imageAbdurahmonMamadiyorov from '@/images/team/abdurahmon-mamadiyorov.jpg'
+import imageSardorDushamov from '@/images/team/sardor-dushamov.jpg'
 
 function Culture() {
   return (
@@ -113,6 +114,12 @@ const team = [
         role: "`Gofer O'zbekiston` rais / Yetakchi",
         link: 'https://www.haywan.uz',
         image: { src: imageAbdurahmonMamadiyorov },
+      },
+      {
+        name: 'Sardor Dushamov',
+        role: "`PHP O'zbekiston` rais / Yetakchi",
+        link: 'https://www.linkedin.com/in/sardor-dushamov-ba275b62/',
+        image: { src: imageSardorDushamov },
       },
     ],
   },
@@ -285,8 +292,8 @@ export default async function About() {
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="6200+" label="A'zolar soni" />
-          <StatListItem value="7" label="Hamjamiyatlar" />
+          <StatListItem value="7557+" label="A'zolar soni" />
+          <StatListItem value="9" label="Hamjamiyatlar" />
           <StatListItem value="50+" label="Loyihalar" />
         </StatList>
       </Container>
