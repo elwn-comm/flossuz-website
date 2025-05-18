@@ -28,6 +28,7 @@ import imageJavokhirAbdusattorov from '@/images/team/abdusattorov-javokhir.jpg'
 import imageShahruzNorimmatov from '@/images/team/shahruz-norimmatov.jpg'
 import imageAbdurahmonMamadiyorov from '@/images/team/abdurahmon-mamadiyorov.jpg'
 import imageSardorDushamov from '@/images/team/sardor-dushamov.jpg'
+import imageDiyorbekIbragimov from '@/images/team/diyorbek-ibragimov.jpg'
 
 function Culture() {
   return (
@@ -132,6 +133,12 @@ const team = [
         role: 'Hamjamiyatlar Boshqaruvi',
         link: 'https://shakhzod.me',
         image: { src: imageShakhzodKudratov },
+      },
+      {
+        name: 'Diyorbek Ibragimov',
+        role: "`PHP O'zbekiston` boshqarmasi",
+        link: 'https://github.com/DikoIbragimov',
+        image: { src: imageDiyorbekIbragimov },
       },
       {
         name: 'Javohir Abdusattorov',
