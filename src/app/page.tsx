@@ -21,6 +21,7 @@ import logoEcma from '@/images/clients/ecma-uzbekistan/logo-light.svg'
 import logoUzbekNet from '@/images/clients/uzbek-net/logo-light.svg'
 import logoGofer from '@/images/clients/gofer-uzbekistan/logo-light.svg'
 import logoPhp from '@/images/clients/php-uzbekistan/logo-light.svg'
+import logoUzinfocom from '@/images/clients/uzinfocom-oss/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 
 const clients = [
@@ -33,6 +34,7 @@ const clients = [
   ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
   ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
   ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
+  ['Uzinfocom Open Source', logoUzinfocom, "https://github.com/uzinfocom-org"],
 ]
 
 function Clients() {

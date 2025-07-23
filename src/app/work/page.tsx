@@ -22,6 +22,7 @@ import logoEcma from '@/images/clients/ecma-uzbekistan/logo-dark.svg'
 import logoUzbekNet from '@/images/clients/uzbek-net/logo-dark.svg'
 import logoGofer from '@/images/clients/gofer-uzbekistan/logo-dark.svg'
 import logoPhp from '@/images/clients/php-uzbekistan/logo-dark.svg'
+import logoUzinfocom from '@/images/clients/uzinfocom-oss/logo-dark.svg'
 
 function CaseStudies({
   caseStudies,
@@ -108,6 +109,7 @@ const clients = [
   ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
   ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
   ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
+  ['Uzinfocom Open Source', logoUzinfocom, "https://github.com/uzinfocom-org"],
 ]
 
 function Clients() {
