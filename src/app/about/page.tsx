@@ -89,7 +89,7 @@ const team = [
       {
         name: 'Baxrom Raxmatov',
         role: "`O'zbek Mahalliylashtirish` rais / Yetakchi",
-        link: 'https://bahrom04.github.io',
+        link: 'https://github.com/bahrom04',
         image: { src: imageBahromRahmatov },
       },
       {
