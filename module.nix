@@ -173,7 +173,7 @@ in {
       dataDir = mkOption {
         type = types.str;
         default = "/var/lib/floss/www";
-        description = lib.mdDoc ''
+        description = ''
           The path where Floss Website server keeps data and possibly logs.
         '';
       };
