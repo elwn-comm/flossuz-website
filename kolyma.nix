@@ -12,7 +12,7 @@ flake:
 }:
 let
   # Shortcut config
-  cfg = config.services.floss-website;
+  cfg = config.floss.website;
 
   # Packaged server
   server = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
