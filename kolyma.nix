@@ -19,7 +19,7 @@ let
 in
 {
   options = with lib; {
-    services.floss.website = {
+    floss.website = {
       enable = mkEnableOption ''
         Floss Uzbekistan website.
       '';
