@@ -31,9 +31,14 @@ in
 
         domain = mkOption {
           type = with types; nullOr str;
-          default = null;
-          example = "floss.uz";
+          default = "floss.uz";
           description = "Domain to use while adding configurations to web proxy server";
+        };
+
+        alias = mkOption {
+          type = with types; listOf str;
+          default = "www.floss.uz";
+          description = "Domains that should be aliased to main domain";
         };
       };
 
@@ -168,6 +173,7 @@ in
               proxyPass = "http://127.0.0.1:${toString cfg.port}";
               proxyWebsockets = true;
             };
+            serverAliases = cfg.proxy.alias;
           };
         };
   };
