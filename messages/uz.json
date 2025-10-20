@@ -1,3 +1,35 @@
 {
-  "Contact": "Bog'lanish"
+  "Contact": "Bog'lanish",
+  "Home-Hero-Title": "O'zbek AyTi hamjamiyatlar aggregatori.",
+  "Home-Hero-Text": "Biz o'zbek dasturchilari va uning hamjamiyatlarini shakllantiramiz, rivojlantiramiz va yordam beramiz. Bizning asosiy maqsadimiz, open-source olamini hammaga tanishtirish va u bilan erishilgan, hamda erishish mumkin bo'lgan cho'qqilarni yoritib berish.",
+  "Our-Subcommunities": "Bizning hamjamiyatlarimiz",
+  "Case-Studies-Title": "Izlanishlar sari olg'a",
+  "Case-Studies-Text": "Biz ishonamizki, texnologiyada qilingan har bir izlanish ma'lum darajada qandaydir o'zining ahamiyatiga ega va bizning vazifamiz bu izlanishlar potensialini cho'qqiga olib chiqish.",
+  "Testimonial-Text": "Hozirgi damda ko'plab hamjamiyatlar monopollashtirilgan va o'ta tartibsiz. Har xil standart va shakllar yordamida yordamida bu muammolarni hal qilish mumkin va Floss O'zbekiston shu maqsadda yaralgan.",
+  "Services-Eyebrow": "Xizmatimiz",
+  "Services-Title": "Tartib va moderatsiya, an'ana va madaniyat.",
+  "Services-Text": "Biz bilan birga ishlashni boshlagan kuningizdanoq, biz birinchi o'rinda ushbu hamjamiyatdagi o'ta muhim element hisoblanmish; tartib, moderatsiya, har xil an'analar va madaniyatga e'tibor qaratamiz va unga shakl beramiz.",
+  "Services-List": {
+    "Order": {
+      "Title": "Tartib",
+      "Text": "Har bir hamjamiyat o'z spetsifik talab va tartibiga ega bo'lishi zarur. Ammo, bu talablar bir nimagadir asoslanishi kerak. Biz esa o'zimiznig standartlarimizdan kelib chiqib tartib yaratamiz."
+    },
+    "Moderation": {
+      "Title": "Moderatsiya",
+      "Text": "Hozirgi vaqtdagi spam, bot va userbotlar hisobga olgan holda, guruhni toza va ortiqcha keraksiz ma'lumotlardan asrash qiyin. Biz esa ushbu protsessni qisman avtomatlashtirib, moderator guruhiga asos solamiz."
+    },
+    "Tradition": {
+      "Title": "An'ana",
+      "Text": "Hamjamiyat a'zolarini bir-biri bilan yaqin ushlab turadigan yagona element bu an'ana hisoblanadi. Ushbu an'analarni esa, har xil entuziazmik eksperimentlar qilish yordamida kelib chiqishiga yordam beramiz."
+    },
+    "Culture": {
+      "Title": "Madaniyat",
+      "Text": "Hozirgi paytda ko'plab odamlarda sotsial tarmoq savodxonligi yo'qligi sabab, ko'plab tajribali inson va ko'ngillilar vaqti behuda ketmoqda. Biz ushbu muammoni avtomatlashtirish orqali bartaraf etamiz."
+    }
+  },
+  "Contact-Title": "Bizga loyihangiz haqida gapirib bering",
+  "Contact-Button": "Salom yo'llang",
+  "Contact-Location-Office": "Bizning ofis",
+  "Contact-Location-Title": "Masofaviy",
+  "Contact-Location-Text": "Hozirgi vaqtda ofis mavjud emas."
 }

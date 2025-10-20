@@ -1,3 +1,35 @@
 {
-  "Contact": "Contact"
+  "Contact": "Contact",
+  "Home-Hero-Title": "Uzbek IT communities aggregator.",
+  "Home-Hero-Text": "We shape, develop, and support Uzbek programmers and their communities. Our main goal is to introduce the world of open-source to everyone and highlight the achievements that have been made and can be achieved with it.",
+  "Our-Subcommunities": "Our communities",
+  "Case-Studies-Title": "Forward to the research",
+  "Case-Studies-Text": "We believe that every piece of research in technology has some kind of value, and our mission is to maximize the potential of this research.",
+  "Testimonial-Text": "Currently, many communities are monopolized and extremely disorganized. These problems can be solved by using various standards and forms, and Floss Uzbekistan was created for this purpose.",
+  "Services-Eyebrow": "Our service",
+  "Services-Title": "Order and moderation, tradition and culture.",
+  "Services-Text": "From the day you start working with us, we will first and foremost focus on and shape the most important elements in this community: order, moderation, various traditions and culture.",
+  "Services-List": {
+    "Order": {
+      "Title": "Order",
+      "Text": "Every community should have its own specific requirements and procedures. But these requirements must be based on something. And we create procedures based on our own standards."
+    },
+    "Moderation": {
+      "Title": "Moderation",
+      "Text": "Given the current level of spam, bots, and userbots, it is difficult to keep the group clean and free of unnecessary information. We are partially automating this process and establishing a moderator group."
+    },
+    "Tradition": {
+      "Title": "Tradition",
+      "Text": "The only thing that keeps the community members close together is tradition. And we help these traditions grow through all kinds of enthusiastic experimentation."
+    },
+    "Culture": {
+      "Title": "Culture",
+      "Text": "Currently, many people are not social media literate, which wastes the time of many experienced people and volunteers. We solve this problem through automation."
+    }
+  },
+  "Contact-Title": "Tell us about your project",
+  "Contact-Button": "Send greeting",
+  "Contact-Location-Office": "Our office",
+  "Contact-Location-Title": "Remote",
+  "Contact-Location-Text": "The office is currently unavailable."
 }

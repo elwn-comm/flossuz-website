@@ -29,7 +29,7 @@ export default function Layout({ params, children }: Props) {
   }
 
   return (
-    <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
+    <html lang={locale} className="h-full bg-neutral-950 text-base antialiased">
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
           <RootLayout>{children}</RootLayout>

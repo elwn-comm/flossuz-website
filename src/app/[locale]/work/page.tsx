@@ -23,6 +23,7 @@ import logoUzbekNet from '@/images/clients/uzbek-net/logo-dark.svg'
 import logoGofer from '@/images/clients/gofer-uzbekistan/logo-dark.svg'
 import logoPhp from '@/images/clients/php-uzbekistan/logo-dark.svg'
 import logoUzinfocom from '@/images/clients/uzinfocom-oss/logo-dark.svg'
+import { getTranslations } from 'next-intl/server'
 
 function CaseStudies({
   caseStudies,
@@ -100,16 +101,16 @@ function CaseStudies({
 }
 
 const clients = [
-  ['Xinux', logoXinux, "https://github.com/xinux-org"],
-  ["Rust O'zbekistan", logoRust, "https://github.com/rust-lang-uz"],
-  ["Haskell O'zbekistan", logoHaskell, "https://github.com/haskelluz"],
-  ['DevOps Journey', logoDevOps, "https://github.com/devops-journey-uz"],
-  ['Scala Uzbekistan', logoScala, "https://github.com/scala-uz"],
-  ['Ecma Uzbekistan', logoEcma, "https://github.com/ecma-uz"],
-  ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
-  ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
-  ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
-  ['Uzinfocom Open Source', logoUzinfocom, "https://github.com/uzinfocom-org"],
+  ['Xinux', logoXinux, 'https://github.com/xinux-org'],
+  ["Rust O'zbekistan", logoRust, 'https://github.com/rust-lang-uz'],
+  ["Haskell O'zbekistan", logoHaskell, 'https://github.com/haskelluz'],
+  ['DevOps Journey', logoDevOps, 'https://github.com/devops-journey-uz'],
+  ['Scala Uzbekistan', logoScala, 'https://github.com/scala-uz'],
+  ['Ecma Uzbekistan', logoEcma, 'https://github.com/ecma-uz'],
+  ['Uzbek Localization', logoUzbekNet, 'https://github.com/uzbek-net'],
+  ['Gofer Uzbekistan', logoGofer, 'https://github.com/gofer-uz'],
+  ['PHP Uzbekistan', logoPhp, 'https://github.com/phpuzb'],
+  ['Uzinfocom Open Source', logoUzinfocom, 'https://github.com/uzinfocom-org'],
 ]
 
 function Clients() {
@@ -143,18 +144,23 @@ function Clients() {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Bizning hamjamiyatlarimiz',
-  description: 'Izlanishlar sari har xil muammolarga yechim topamiz.',
+export async function getMetadata(): Promise<Metadata> {
+  const t = await getTranslations()
+
+  return {
+    title: t('Our-Subcommunities'),
+    description: 'Izlanishlar sari har xil muammolarga yechim topamiz.',
+  }
 }
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
+  const t = await getTranslations()
 
   return (
     <>
       <PageIntro
-        eyebrow="Bizning hamjamiyatlarimiz"
+        eyebrow={t('Our-Subcommunities')}
         title="Izlanishlar sari har xil muammolarga yechim topamiz."
       >
         <p>

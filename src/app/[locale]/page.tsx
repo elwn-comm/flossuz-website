@@ -23,27 +23,30 @@ import logoGofer from '@/images/clients/gofer-uzbekistan/logo-light.svg'
 import logoPhp from '@/images/clients/php-uzbekistan/logo-light.svg'
 import logoUzinfocom from '@/images/clients/uzinfocom-oss/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
+import { getTranslations } from 'next-intl/server'
 
 const clients = [
-  ['Xinux', logoXinux, "https://github.com/xinux-org"],
-  ["Rust O'zbekiston", logoRust, "https://github.com/rust-lang-uz"],
-  ["Haskell O'zbekiston", logoHaskell, "https://github.com/haskelluz"],
-  ['Devops Journey', logoDevOps, "https://github.com/devops-journey-uz"],
-  ['Scala Uzbekistan', logoScala, "https://github.com/scala-uz"],
-  ['Ecma Uzbekistan', logoEcma, "https://github.com/ecma-uz"],
-  ['Uzbek Localization', logoUzbekNet, "https://github.com/uzbek-net"],
-  ['Gofer Uzbekistan', logoGofer, "https://github.com/gofer-uz"],
-  ['PHP Uzbekistan', logoPhp, "https://github.com/phpuzb"],
-  ['Uzinfocom Open Source', logoUzinfocom, "https://github.com/uzinfocom-org"],
+  ['Xinux', logoXinux, 'https://github.com/xinux-org'],
+  ["Rust O'zbekiston", logoRust, 'https://github.com/rust-lang-uz'],
+  ["Haskell O'zbekiston", logoHaskell, 'https://github.com/haskelluz'],
+  ['Devops Journey', logoDevOps, 'https://github.com/devops-journey-uz'],
+  ['Scala Uzbekistan', logoScala, 'https://github.com/scala-uz'],
+  ['Ecma Uzbekistan', logoEcma, 'https://github.com/ecma-uz'],
+  ['Uzbek Localization', logoUzbekNet, 'https://github.com/uzbek-net'],
+  ['Gofer Uzbekistan', logoGofer, 'https://github.com/gofer-uz'],
+  ['PHP Uzbekistan', logoPhp, 'https://github.com/phpuzb'],
+  ['Uzinfocom Open Source', logoUzinfocom, 'https://github.com/uzinfocom-org'],
 ]
 
-function Clients() {
+async function Clients() {
+  const t = await getTranslations()
+
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            Bizning hamjamiyatlarimiz
+            {t('Our-Subcommunities')}
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -68,22 +71,20 @@ function Clients() {
   )
 }
 
-function CaseStudies({
+async function CaseStudies({
   caseStudies,
 }: {
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
+  const t = await getTranslations()
+
   return (
     <>
       <SectionIntro
-        title="Izlanishlari sari olg'a"
+        title={t('Case-Studies-Title')}
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        <p>
-          Biz ishonamizki texnologiya da qilingan har bir izlanish ma'lum
-          darajada qandaydir o'zining ahamiyatga ega va bizning vazifamiz bu
-          izlanishlar potensialini cho'qqiga olib chiqish.
-        </p>
+        <p>{t('Case-Studies-Text')}</p>
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -128,20 +129,17 @@ function CaseStudies({
   )
 }
 
-function Services() {
+async function Services() {
+  const t = await getTranslations()
+
   return (
     <>
       <SectionIntro
-        eyebrow="Xizmatimiz"
-        title="Tartib va moderatsiya, an'ana va madaniyat."
+        eyebrow={t('Services-Eyebrow')}
+        title={t('Services-Title')}
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        <p>
-          Biz bilan birga ishlashni boshlagan kuningizdanoq, biz birinchi
-          o'rinda ushbu hamjamiyatdagi o'ta muhim element hisoblanmish; tartib,
-          moderatsiya, har xil an'analar va madaniyatga e'tibor qaratamiz va
-          unga shakl beramiz.
-        </p>
+        <p>{t('Services-Text')}</p>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
@@ -155,28 +153,20 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Tartib">
-              Har bir hamjamiyat o'z spetsifik talab va tartibiga ega bo'lishi
-              zarur. Ammo, bu talablar bir nimagadir asoslanishi kerak. Biz esa
-              o'zimiznig standartlarimizdan kelib chiqib tartib yaratamiz.
+            <ListItem title={t('Services-List.Order.Title')}>
+              {t('Services-List.Order.Text')}
             </ListItem>
-            <ListItem title="Moderatsiya">
-              Hozirgi vaqtdagi spam, bot va userbotlar hisobga olgan holda,
-              guruhni toza va ortiqcha keraksiz ma'lumotlardan asrash qiyin. Biz
-              esa ushbu protsessni qisman avtomatlashtirib, moderator guruhiga
-              asos solamiz.
+
+            <ListItem title={t('Services-List.Moderation.Title')}>
+              {t('Services-List.Moderation.Text')}
             </ListItem>
-            <ListItem title="An'ana">
-              Hamjamiyat a'zolarini bir-biri bilan yaqin ushlab turadigan yagona
-              element bu an'ana hisoblanadi. Ushbu an'analarni esa, har xil
-              entuziazmik eksperimentlar qilish yordamida kelib chiqishiga
-              yordam beramiz.
+
+            <ListItem title={t('Services-List.Tradition.Title')}>
+              {t('Services-List.Tradition.Text')}
             </ListItem>
-            <ListItem title="Madaniyat">
-              Hozirgi paytda ko'plab odamlarda sotsial tarmoq savodxonligi
-              yo'qligi sabab, ko'plab tajribali inson va ko'ngillilar vaqti
-              behuda ketmoqda. Biz ushbu muammoni avtomatlashtirish orqali
-              bartaraf etamiz.
+
+            <ListItem title={t('Services-List.Culture.Title')}>
+              {t('Services-List.Culture.Text')}
             </ListItem>
           </List>
         </div>
@@ -192,20 +182,16 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
+  const t = await getTranslations()
 
   return (
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
-            O'zbek AyTi hamjamiyatlar aggregatori.
+            {t('Home-Hero-Title')}
           </h1>
-          <p className="mt-6 text-xl text-neutral-600">
-            Biz o'zbek dasturchilari va uning hamjamiyatlarini shakllantiramiz,
-            rivojlantiramiz va yordam beramiz. Bizning asosiy maqsadimiz,
-            open-source olamini hammaga tanishtirish va u bilan erishilgan,
-            hamda erishish mumkin bo'lgan cho'qqilarni yoritib berish.
-          </p>
+          <p className="mt-6 text-xl text-neutral-600">{t('Home-Hero-Text')}</p>
         </FadeIn>
       </Container>
 
@@ -217,10 +203,7 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Xinux', logo: logoXinuxDark }}
       >
-        Hozirgi damda ko'plab hamjamiyatlar monopollashtirilgan va o'ta
-        tartibsiz. Har xil standart va shakllar yordamida yordamida bu
-        muammolarni hal qilish mumkin va Floss O'zbekiston shu maqsadda
-        yaralgan.
+        {t('Testimonial-Text')}
       </Testimonial>
 
       <Services />
